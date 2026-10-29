@@ -4,7 +4,7 @@
 
 Группа: IT2 2310. Student ID: 38288. GitHub: https://github.com/asylbektajibayev-max
 
-Documentation status: main submission guide by Tajibayev Assylbek
+Documentation status: submission guide with Docker and Jenkins instructions by Tajibayev Assylbek
 
 Личная CRUD-доработка Tajibayev Assylbek: GET /api/students?name=TAJIBAYEV фильтрует студентов по фрагменту имени без учёта регистра. Покрыто тестом nameFilter.
 
