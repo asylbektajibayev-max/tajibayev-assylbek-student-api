@@ -4,6 +4,7 @@ pipeline {
     options { skipDefaultCheckout(true); timestamps(); disableConcurrentBuilds() }
     triggers { pollSCM('H/2 * * * *') }
     environment {
+        DOCKER_BUILDKIT = '1'
         STUDENT_NAME = 'Tajibayev Assylbek'
         IMAGE = 'tajibayev-assylbek-student-api:v1.1-tajibayev-assylbek-38288'
     }
