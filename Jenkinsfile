@@ -8,7 +8,7 @@ pipeline {
     }
     environment {
         STUDENT_NAME = 'Tajibayev Assylbek'
-        IMAGE = 'tajibayev-assylbek-student-api:v1.0-tajibayev-assylbek-38288'
+        IMAGE = 'tajibayev-assylbek-student-api:v1.1-tajibayev-assylbek-38288'
     }
     stages {
         stage('Checkout') {

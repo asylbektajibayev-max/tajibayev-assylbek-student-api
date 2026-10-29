@@ -2,7 +2,7 @@ name: ${PROJECT_NAME:-tajibayev-assylbek-student-api}
 services:
   app:
     build: .
-    image: ${PROJECT_NAME:-tajibayev-assylbek-student-api}:${IMAGE_TAG:-v1.0-tajibayev-assylbek-38288}
+    image: ${PROJECT_NAME:-tajibayev-assylbek-student-api}:${IMAGE_TAG:-v1.1-tajibayev-assylbek-38288}
     ports:
       - "127.0.0.1:${APP_PORT:-18080}:8080"
     environment:
