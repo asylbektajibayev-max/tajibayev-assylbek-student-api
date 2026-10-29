@@ -1,0 +1,70 @@
+Started by user assylbek
+Obtained Jenkinsfile from git https://github.com/asylbektajibayev-max/tajibayev-assylbek-student-api.git
+[Pipeline] Start of Pipeline
+[Pipeline] node
+Running on Jenkins in /var/jenkins_home/workspace/Tajibayev_Assylbek_Student_API
+[Pipeline] {
+[Pipeline] withEnv
+[Pipeline] {
+[Pipeline] timestamps
+[Pipeline] {
+[Pipeline] stage
+[Pipeline] { (Declarative: Tool Install)
+[Pipeline] tool
+[Pipeline] envVarsForTool
+[Pipeline] }
+[Pipeline] // stage
+[Pipeline] withEnv
+[Pipeline] {
+[Pipeline] stage
+[Pipeline] { (Checkout)
+[Pipeline] tool
+[Pipeline] envVarsForTool
+[Pipeline] withEnv
+[Pipeline] {
+[Pipeline] checkout
+[2026-10-29T17:15:43.578Z] Selected Git installation does not exist. Using Default
+[2026-10-29T17:15:43.578Z] The recommended git tool is: NONE
+[2026-10-29T17:15:43.578Z] No credentials specified
+[2026-10-29T17:15:43.579Z]  > git rev-parse --resolve-git-dir /var/jenkins_home/workspace/Tajibayev_Assylbek_Student_API/.git # timeout=10
+[2026-10-29T17:15:43.582Z] Fetching changes from the remote Git repository
+[2026-10-29T17:15:43.585Z]  > git config remote.origin.url https://github.com/asylbektajibayev-max/tajibayev-assylbek-student-api.git # timeout=10
+[2026-10-29T17:15:43.590Z] Fetching upstream changes from https://github.com/asylbektajibayev-max/tajibayev-assylbek-student-api.git
+[2026-10-29T17:15:43.590Z]  > git --version # timeout=10
+[2026-10-29T17:15:43.593Z]  > git --version # 'git version 2.47.3'
+[2026-10-29T17:15:43.593Z]  > git fetch --tags --force --progress -- https://github.com/asylbektajibayev-max/tajibayev-assylbek-student-api.git +refs/heads/*:refs/remotes/origin/* # timeout=10
+[2026-10-29T17:15:44.365Z]  > git rev-parse refs/remotes/origin/main^{commit} # timeout=10
+[2026-10-29T17:15:44.371Z] Checking out Revision 726187aec02271fed4220effb483b83f77628e08 (refs/remotes/origin/main)
+[2026-10-29T17:15:44.371Z]  > git config core.sparsecheckout # timeout=10
+[2026-10-29T17:15:44.376Z]  > git checkout -f 726187aec02271fed4220effb483b83f77628e08 # timeout=10
+[2026-10-29T17:15:44.401Z] Commit message: "Tajibayev Assylbek: verify six API tests Linux report and configure JDK17 CI"
+[2026-10-29T17:15:44.402Z]  > git rev-list --no-walk 726187aec02271fed4220effb483b83f77628e08 # timeout=10
+[Pipeline] echo
+[2026-10-29T17:15:44.539Z] Student: Tajibayev Assylbek
+[Pipeline] }
+[Pipeline] // withEnv
+[Pipeline] }
+[Pipeline] // stage
+[Pipeline] stage
+[Pipeline] { (Build)
+[Pipeline] tool
+[Pipeline] envVarsForTool
+[Pipeline] withEnv
+[Pipeline] {
+[Pipeline] sh
+[2026-10-29T17:15:45.051Z] + chmod +x gradlew
+[2026-10-29T17:15:45.051Z] + ./gradlew --no-daemon clean assemble
+[2026-10-29T17:15:45.963Z] 
+[2026-10-29T17:15:45.963Z] Welcome to Gradle 8.14.4!
+[2026-10-29T17:15:45.963Z] 
+[2026-10-29T17:15:45.963Z] Here are the highlights of this release:
+[2026-10-29T17:15:45.963Z]  - Java 24 support
+[2026-10-29T17:15:45.963Z]  - GraalVM Native Image toolchain selection
+[2026-10-29T17:15:45.963Z]  - Enhancements to test reporting
+[2026-10-29T17:15:45.963Z]  - Build Authoring improvements
+[2026-10-29T17:15:45.963Z] 
+[2026-10-29T17:15:45.963Z] For more details see https://docs.gradle.org/8.14.4/release-notes.html
+[2026-10-29T17:15:45.963Z] 
+[2026-10-29T17:15:46.214Z] To honour the JVM settings for this build a single-use Daemon process will be forked. For more on this, please refer to https://docs.gradle.org/8.14.4/userguide/gradle_daemon.html#sec:disabling_the_daemon in the Gradle documentation.
+[2026-10-29T17:15:48.077Z] Daemon will be stopped at the end of the build 
+

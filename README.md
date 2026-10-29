@@ -8,7 +8,7 @@ Documentation status: submission guide with Docker and Jenkins instructions by T
 
 Личная CRUD-доработка Tajibayev Assylbek: GET /api/students?name=TAJIBAYEV фильтрует студентов по фрагменту имени без учёта регистра. Покрыто тестом nameFilter.
 
-Spring Boot CRUD API для студентов с PostgreSQL, Gradle Wrapper, Docker Compose и Jenkins CI. Java 17; Spring Boot 3.5.16; Gradle 8.14.3; PostgreSQL 17. Приложение показывает имя автора через `GET /`.
+Spring Boot CRUD API для студентов с PostgreSQL, Gradle Wrapper, Docker Compose и Jenkins CI. Java 17; Spring Boot 3.5.16; Gradle 8.14.4; PostgreSQL 17. Приложение показывает имя автора через `GET /`.
 
 ## Запуск
 
@@ -68,8 +68,8 @@ DB_URL содержит имя сервиса `db`; localhost внутри app �
 
 ```bash
 git config user.name 'Tajibayev Assylbek'
-git config user.email 'YOUR_VERIFIED_GITHUB_EMAIL'
-git remote add origin https://github.com/YOUR_USERNAME/YOUR_PERSONAL_REPOSITORY.git
+git config user.email 'asylbektajibayev-max@users.noreply.github.com'
+git remote add origin https://github.com/asylbektajibayev-max/tajibayev-assylbek-student-api.git
 git push -u origin main
 git push origin --all
 git push origin --tags
@@ -85,7 +85,7 @@ git tag -n
 
 ## Jenkins
 
-Создать Multibranch Pipeline с личным именем `Surname_Name_Student_API`. Добавить GitHub Branch Source с URL своего репозитория; credentialsId хранить в Jenkins Credentials. Настроить обнаружение main и feature-веток. Script Path: Jenkinsfile.
+Создать Multibranch Pipeline с личным именем `Tajibayev_Assylbek_Student_API`. Добавить GitHub Branch Source с URL своего репозитория; credentialsId хранить в Jenkins Credentials. Настроить обнаружение main и feature-веток. Script Path: Jenkinsfile.
 
 Агент Linux с label `docker` должен иметь Git, JDK 17, доступ к Docker и сеть к Gradle/Maven repositories. Gradle устанавливается через закоммиченный Wrapper. Доступ к Docker daemon даёт широкие права: использовать личный доверенный агент для этого проекта.
 

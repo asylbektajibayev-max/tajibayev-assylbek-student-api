@@ -1,0 +1,62 @@
+[
+  {
+    "method": "POST",
+    "url": "http://127.0.0.1:18080/api/students",
+    "status": 201,
+    "response": "{\"id\":1,\"name\":\"Tajibayev Assylbek\",\"email\":\"student-1793294053554268700@example.org\",\"course\":\"DevOps\"}"
+  },
+  {
+    "method": "GET",
+    "url": "http://127.0.0.1:18080/api/students",
+    "status": 200,
+    "response": "[{\"id\":1,\"name\":\"Tajibayev Assylbek\",\"email\":\"student-1793294053554268700@example.org\",\"course\":\"DevOps\"}]"
+  },
+  {
+    "method": "GET",
+    "url": "http://127.0.0.1:18080/api/students/1",
+    "status": 200,
+    "response": "{\"id\":1,\"name\":\"Tajibayev Assylbek\",\"email\":\"student-1793294053554268700@example.org\",\"course\":\"DevOps\"}"
+  },
+  {
+    "method": "PUT",
+    "url": "http://127.0.0.1:18080/api/students/1",
+    "status": 200,
+    "response": "{\"id\":1,\"name\":\"Tajibayev Assylbek\",\"email\":\"student-1793294053554268700@example.org\",\"course\":\"DevOps updated\"}"
+  },
+  {
+    "method": "POST",
+    "url": "http://127.0.0.1:18080/api/students",
+    "status": 409,
+    "response": "{\"error\":\"Email already exists or data violates constraints\"}"
+  },
+  {
+    "method": "POST",
+    "url": "http://127.0.0.1:18080/api/students",
+    "status": 400,
+    "response": "{\"timestamp\":\"2026-10-29T17:14:14.010+00:00\",\"status\":400,\"error\":\"Bad Request\",\"path\":\"/api/students\"}"
+  },
+  {
+    "method": "DELETE",
+    "url": "http://127.0.0.1:18080/api/students/1",
+    "status": 204,
+    "response": ""
+  },
+  {
+    "method": "GET",
+    "url": "http://127.0.0.1:18080/api/students/1",
+    "status": 404,
+    "response": "{\"timestamp\":\"2026-10-29T17:14:14.052+00:00\",\"status\":404,\"error\":\"Not Found\",\"path\":\"/api/students/1\"}"
+  },
+  {
+    "method": "PUT",
+    "url": "http://127.0.0.1:18080/api/students/1",
+    "status": 404,
+    "response": "{\"timestamp\":\"2026-10-29T17:14:14.062+00:00\",\"status\":404,\"error\":\"Not Found\",\"path\":\"/api/students/1\"}"
+  },
+  {
+    "method": "DELETE",
+    "url": "http://127.0.0.1:18080/api/students/1",
+    "status": 404,
+    "response": "{\"timestamp\":\"2026-10-29T17:14:14.070+00:00\",\"status\":404,\"error\":\"Not Found\",\"path\":\"/api/students/1\"}"
+  }
+]

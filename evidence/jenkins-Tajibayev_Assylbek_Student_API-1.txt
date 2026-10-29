@@ -1,0 +1,61 @@
+Started by user assylbek
+Obtained Jenkinsfile from git https://github.com/asylbektajibayev-max/tajibayev-assylbek-student-api.git
+[Pipeline] Start of Pipeline
+[Pipeline] node
+Running on Jenkins in /var/jenkins_home/workspace/Tajibayev_Assylbek_Student_API
+[Pipeline] {
+[Pipeline] withEnv
+[Pipeline] {
+[Pipeline] timestamps
+[Pipeline] {
+[Pipeline] stage
+[Pipeline] { (Declarative: Tool Install)
+[Pipeline] tool
+[Pipeline] envVarsForTool
+[Pipeline] }
+[Pipeline] // stage
+[Pipeline] withEnv
+[Pipeline] {
+[Pipeline] stage
+[Pipeline] { (Checkout)
+[Pipeline] tool
+[Pipeline] envVarsForTool
+[Pipeline] withEnv
+[Pipeline] {
+[Pipeline] checkout
+[2026-10-29T17:12:55.496Z] Selected Git installation does not exist. Using Default
+[2026-10-29T17:12:55.499Z] The recommended git tool is: NONE
+[2026-10-29T17:12:55.499Z] No credentials specified
+[2026-10-29T17:12:55.500Z] Cloning the remote Git repository
+[2026-10-29T17:12:55.503Z] Cloning repository https://github.com/asylbektajibayev-max/tajibayev-assylbek-student-api.git
+[2026-10-29T17:12:55.504Z]  > git init /var/jenkins_home/workspace/Tajibayev_Assylbek_Student_API # timeout=10
+[2026-10-29T17:12:55.513Z] Fetching upstream changes from https://github.com/asylbektajibayev-max/tajibayev-assylbek-student-api.git
+[2026-10-29T17:12:55.513Z]  > git --version # timeout=10
+[2026-10-29T17:12:55.516Z]  > git --version # 'git version 2.47.3'
+[2026-10-29T17:12:55.517Z]  > git fetch --tags --force --progress -- https://github.com/asylbektajibayev-max/tajibayev-assylbek-student-api.git +refs/heads/*:refs/remotes/origin/* # timeout=10
+[2026-10-29T17:13:01.139Z]  > git config remote.origin.url https://github.com/asylbektajibayev-max/tajibayev-assylbek-student-api.git # timeout=10
+[2026-10-29T17:13:01.145Z]  > git config --add remote.origin.fetch +refs/heads/*:refs/remotes/origin/* # timeout=10
+[2026-10-29T17:13:01.153Z] Avoid second fetch
+[2026-10-29T17:13:01.154Z]  > git rev-parse refs/remotes/origin/main^{commit} # timeout=10
+[2026-10-29T17:13:01.284Z] Checking out Revision 726187aec02271fed4220effb483b83f77628e08 (refs/remotes/origin/main)
+[2026-10-29T17:13:01.285Z]  > git config core.sparsecheckout # timeout=10
+[2026-10-29T17:13:01.291Z]  > git checkout -f 726187aec02271fed4220effb483b83f77628e08 # timeout=10
+[2026-10-29T17:13:01.311Z] Commit message: "Tajibayev Assylbek: verify six API tests Linux report and configure JDK17 CI"
+[2026-10-29T17:13:01.312Z] First time build. Skipping changelog.
+[Pipeline] echo
+[2026-10-29T17:13:01.394Z] Student: Tajibayev Assylbek
+[Pipeline] }
+[Pipeline] // withEnv
+[Pipeline] }
+[Pipeline] // stage
+[Pipeline] stage
+[Pipeline] { (Build)
+[Pipeline] tool
+[Pipeline] envVarsForTool
+[Pipeline] withEnv
+[Pipeline] {
+[Pipeline] sh
+[2026-10-29T17:13:02.267Z] + chmod +x gradlew
+[2026-10-29T17:13:02.267Z] + ./gradlew --no-daemon clean assemble
+[2026-10-29T17:13:02.523Z] Downloading https://services.gradle.org/distributions/gradle-8.14.4-bin.zip
+
