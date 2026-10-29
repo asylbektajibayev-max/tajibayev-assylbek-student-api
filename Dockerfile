@@ -4,7 +4,7 @@ COPY gradlew gradlew.bat build.gradle settings.gradle ./
 COPY gradle gradle
 RUN chmod +x gradlew
 COPY src src
-RUN ./gradlew --no-daemon clean bootJar
+RUN --mount=type=cache,id=midterm-38288-gradle,target=/root/.gradle ./gradlew --no-daemon clean bootJar
 FROM eclipse-temurin:17-jre-jammy
 WORKDIR /app
 RUN groupadd --system app && useradd --system --gid app app

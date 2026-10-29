@@ -1,5 +1,6 @@
 pipeline {
     agent { label 'docker' }
+    tools { jdk 'midterm-jdk17' }
     options { skipDefaultCheckout(true); timestamps(); disableConcurrentBuilds() }
     triggers { pollSCM('H/2 * * * *') }
     parameters {
