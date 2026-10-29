@@ -9,7 +9,9 @@ import java.util.List;
 public class StudentController {
  private final StudentRepository repo;
  public StudentController(StudentRepository repo) { this.repo=repo; }
- @GetMapping public List<Student> all() { return repo.findAll(); }
+ @GetMapping public List<Student> all(@RequestParam(required=false) String name) {
+  return name == null || name.isBlank() ? repo.findAll() : repo.findByNameContainingIgnoreCase(name.trim());
+ }
  @GetMapping("/{id}") public Student one(@PathVariable Long id) {
   return repo.findById(id).orElseThrow(()->new ResponseStatusException(HttpStatus.NOT_FOUND,"Student not found"));
  }

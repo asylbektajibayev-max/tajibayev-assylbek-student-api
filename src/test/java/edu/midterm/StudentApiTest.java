@@ -32,5 +32,10 @@ class StudentApiTest {
   mvc.perform(put("/api/students/999999").contentType("application/json").content(body("Test","test@example.org"))).andExpect(status().isNotFound());
   mvc.perform(delete("/api/students/999999")).andExpect(status().isNotFound());
  }
+ @Test void nameFilter() throws Exception {
+  mvc.perform(post("/api/students").contentType("application/json").content(body("Tajibayev Assylbek","author@example.org"))).andExpect(status().isCreated());
+  mvc.perform(get("/api/students").param("name","TAJIBAYEV")).andExpect(status().isOk()).andExpect(jsonPath("$.length()").value(1));
+  mvc.perform(get("/api/students").param("name","absent")).andExpect(status().isOk()).andExpect(jsonPath("$.length()").value(0));
+ }
  @Test void controlledFailure() { Assertions.assertFalse(Boolean.getBoolean("midterm.fail"), "Controlled failure demonstration"); }
 }
