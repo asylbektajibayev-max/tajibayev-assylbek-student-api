@@ -26,7 +26,7 @@ pipeline {
                     sh "./gradlew --no-daemon test ${params.CONTROLLED_FAILURE ? '-PcontrolledFailure=true' : ''}"
                 }
             }
-            post { always { junit allowEmptyResults: true, testResults: 'build/test-results/test/*.xml' } }
+            post { always { archiveArtifacts allowEmptyArchive: true, artifacts: 'build/test-results/test/*.xml' } }
         }
         stage('Docker Build') {
             steps { sh 'docker build -t "$IMAGE" .' }
