@@ -5,16 +5,40 @@
 ./.env.example
 ./.gitattributes
 ./.gitignore
+./DEFENSE_RU.md
 ./Dockerfile
 ./Jenkinsfile
 ./README.md
+./SUBMISSION_RU.md
 ./backups
 ./backups/README_Tajibayev_Assylbek.md
 ./build.gradle
 ./docker-compose.yml
 ./evidence
+./evidence/api-responses.json
+./evidence/container-management.txt
+./evidence/docker-build.txt
+./evidence/docker-images.txt
+./evidence/docker-rebuild-v1.1.txt
+./evidence/git-branches.txt
 ./evidence/git-conflict.txt
+./evidence/git-history.txt
+./evidence/git-remote.txt
+./evidence/git-tags.txt
+./evidence/gradle-final-success.txt
+./evidence/gradle-success.txt
+./evidence/jenkins-Tajibayev_Assylbek_Student_API-1.txt
+./evidence/jenkins-Tajibayev_Assylbek_Student_API-2.txt
+./evidence/jenkins-Tajibayev_Assylbek_Student_API-3.txt
+./evidence/jenkins-Tajibayev_Assylbek_Student_API-4.txt
+./evidence/jenkins-Tajibayev_Assylbek_Student_API-5.txt
+./evidence/jenkins-Tajibayev_Assylbek_Student_API_CI_Demo-1.txt
+./evidence/jenkins-Tajibayev_Assylbek_Student_API_CI_Demo-2.txt
+./evidence/jenkins-Tajibayev_Assylbek_Student_API_CI_Demo-3.txt
+./evidence/jenkins-Tajibayev_Assylbek_Student_API_CI_Demo-4.txt
+./evidence/junit-results.xml
 ./evidence/linux-terminal.txt
+./evidence/version11-and-persistence.json
 ./gradle
 ./gradle/wrapper
 ./gradle/wrapper/gradle-wrapper.jar
@@ -22,10 +46,12 @@
 ./gradlew
 ./gradlew.bat
 ./logs
+./logs/Tajibayev_Assylbek_log_analysis.txt
 ./logs/Tajibayev_Assylbek_system_report.log
 ./scripts
 ./scripts/Tajibayev_Assylbek_system_report.sh
 ./scripts/api_verify.py
+./scripts/create_env.py
 ./scripts/linux_evidence.sh
 ./settings.gradle
 ./src
@@ -51,16 +77,16 @@
 ./src/test/resources/application.properties
 ./student.conf
 === Required files ===
--rwxr-xr-x 1 root root 467 Oct 29 17:03 Dockerfile
--rwxr-xr-x 1 root root 1063 Oct 29 17:03 docker-compose.yml
--rwxr-xr-x 1 root root 1727 Oct 29 17:03 Jenkinsfile
--rwxr-xr-x 1 root root 1020 Oct 29 17:03 build.gradle
--rwxr-xr-x 1 root root 9362 Oct 29 17:04 README.md
+-rwxr-xr-x 1 root root 531 Oct 29 17:08 Dockerfile
+-rwxr-xr-x 1 root root 1096 Oct 29 17:23 docker-compose.yml
+-rwxr-xr-x 1 root root 1336 Oct 29 17:23 Jenkinsfile
+-rwxr-xr-x 1 root root 1044 Oct 29 17:23 build.gradle
+-rwxr-xr-x 1 root root 9436 Oct 29 17:23 README.md
 === Permissions ===
 -rwxr--r-- 1 root root 526 Oct 29 17:03 scripts/Tajibayev_Assylbek_system_report.sh
 === Report ===
 Student: Tajibayev Assylbek
-Date: 2026-10-29T17:05:50+00:00
+Date: 2026-10-29T17:24:08+00:00
 Username: root
 Operating system:
 PRETTY_NAME="Debian GNU/Linux 13 (trixie)"
@@ -120,22 +146,22 @@ Vulnerability Tsx async abort:           Not affected
 Vulnerability Vmscape:                   Not affected
 Memory:
                total        used        free      shared  buff/cache   available
-Mem:           3.7Gi       1.7Gi        64Mi        18Mi       2.2Gi       2.1Gi
-Swap:          1.0Gi       144Ki       1.0Gi
+Mem:           3.7Gi       1.8Gi       330Mi        24Mi       1.8Gi       1.9Gi
+Swap:          1.0Gi       500Mi       523Mi
 Disk usage and available space:
 Filesystem      Size  Used Avail Use% Mounted on
-overlay        1007G  7.5G  949G   1% /
+overlay        1007G   12G  944G   2% /
 tmpfs            64M     0   64M   0% /dev
 shm              64M     0   64M   0% /dev/shm
-C:\             476G  380G   96G  80% /source
-/dev/sde       1007G  7.5G  949G   1% /etc/hosts
+C:\             476G  386G   90G  82% /source
+/dev/sde       1007G   12G  944G   2% /etc/hosts
 tmpfs           1.9G     0  1.9G   0% /proc/acpi
 tmpfs           1.9G     0  1.9G   0% /proc/scsi
 tmpfs           1.9G     0  1.9G   0% /sys/firmware
 Project disk usage:
-56M	/tmp/midterm-38288
+57M	/tmp/tajibayev-assylbek-student-api
 === Backup verification ===
--rwxr-xr-x 1 root root 9362 Oct 29 17:05 backups/README_Tajibayev_Assylbek.md
+-rwxr-xr-x 1 root root 9436 Oct 29 17:24 backups/README_Tajibayev_Assylbek.md
 # Student API DevOps midterm
 
 Автор: Tajibayev Assylbek
@@ -146,11 +172,11 @@ Documentation status: submission guide with Docker and Jenkins instructions by T
 
 Личная CRUD-доработка Tajibayev Assylbek: GET /api/students?name=TAJIBAYEV фильтрует студентов по фрагменту имени без учёта регистра. Покрыто тестом nameFilter.
 
-Spring Boot CRUD API для студентов с PostgreSQL, Gradle Wrapper, Docker Compose и Jenkins CI. Java 17; Spring Boot 3.5.16; Gradle 8.14.3; PostgreSQL 17. Приложение показывает имя автора через `GET /`.
+Spring Boot CRUD API для студентов с PostgreSQL, Gradle Wrapper, Docker Compose и Jenkins CI. Java 17; Spring Boot 3.5.16; Gradle 8.14.4; PostgreSQL 17. Приложение показывает имя автора через `GET /`.
 
 ## Запуск
 
-1. Скопировать `.env.example` в `.env`; задать личное имя, PROJECT_NAME, IMAGE_TAG и случайный DB_PASSWORD. Не публиковать `.env`.
+1. Выполнить `python scripts/create_env.py`: создаст личный `.env` со случайным DB_PASSWORD. Уже существующий файл не перезапишет. Не публиковать `.env`.
 2. Выполнить `docker compose up -d --build`.
 3. Проверить `docker compose ps` и `curl http://localhost:18080/actuator/health`.
 4. Выполнить `python scripts/api_verify.py` для проверки всех CRUD-операций, 404, 400 и 409.
@@ -206,8 +232,8 @@ DB_URL содержит имя сервиса `db`; localhost внутри app �
 
 ```bash
 git config user.name 'Tajibayev Assylbek'
-git config user.email 'YOUR_VERIFIED_GITHUB_EMAIL'
-git remote add origin https://github.com/YOUR_USERNAME/YOUR_PERSONAL_REPOSITORY.git
+git config user.email 'asylbektajibayev-max@users.noreply.github.com'
+git remote add origin https://github.com/asylbektajibayev-max/tajibayev-assylbek-student-api.git
 git push -u origin main
 git push origin --all
 git push origin --tags
@@ -223,13 +249,13 @@ git tag -n
 
 ## Jenkins
 
-Создать Multibranch Pipeline с личным именем `Surname_Name_Student_API`. Добавить GitHub Branch Source с URL своего репозитория; credentialsId хранить в Jenkins Credentials. Настроить обнаружение main и feature-веток. Script Path: Jenkinsfile.
+Настроен Pipeline job `Tajibayev_Assylbek_Student_API`: Pipeline script from SCM, Git, URL личного репозитория, branch `*/main`, Script Path `Jenkinsfile`. Отдельный job `Tajibayev_Assylbek_Student_API_CI_Demo` использует `*/feature/tajibayev-assylbek-ci-demo`. Репозиторий публичный, поэтому для checkout секрет не требуется; для private repo хранить credentialsId в Jenkins Credentials.
 
 Агент Linux с label `docker` должен иметь Git, JDK 17, доступ к Docker и сеть к Gradle/Maven repositories. Gradle устанавливается через закоммиченный Wrapper. Доступ к Docker daemon даёт широкие права: использовать личный доверенный агент для этого проекта.
 
-Pipeline выполняет Checkout, Build, Test, Docker Build, Verify. Ошибка sh/тестов прерывает дальнейшие stages. JUnit результаты публикуются и при провале тестов. Имя автора печатается в консоль. Образ должен совпадать с личным именем и тегом из .env.
+Pipeline выполняет Checkout, Build, Test, Docker Build, Verify. Ошибка sh/тестов прерывает дальнейшие stages. JUnit XML сохраняются как артефакты и при провале тестов. Имя автора печатается в консоль. Образ должен совпадать с личным именем и тегом из .env. В Jenkins нужно настроить JDK tool `midterm-jdk17`; встроенный JUnit publisher не требуется.
 
-Для демонстрации ошибки использовать личную feature-ветку CI, указанную в Jenkinsfile. Первый запуск без параметра CONTROLLED_FAILURE должен пройти. Второй запуск с параметром должен упасть на Test. Третий запуск с выключенным параметром должен снова пройти. Сохранить Console Output и build history для всех трёх запусков. Для демонстрации исправления кодом можно добавить в feature-ветке ошибочное утверждение теста, закоммитить его, дождаться failed build, затем исправить отдельным коммитом.
+Для демонстрации ошибки использована личная ветка `feature/tajibayev-assylbek-ci-demo`. Коммит `1624b2d` намеренно ломает controlledFailure, коммит `3439ad4` исправляет тест. Job CI_Demo №2 показывает 6 tests completed, 1 failed; последующий запуск проверяет исправление. В main намеренная ошибка не попадала. Console Output сохранён в evidence.
 
 pollSCM опрашивает Git каждые две минуты после первого запуска pipeline. После первого успешного запуска сделать новый commit и push, дождаться автоматического запуска. Альтернатива — GitHub webhook на доступный Jenkins endpoint с секретом. Не открывать Jenkins в интернет без аутентификации и TLS.
 
@@ -240,14 +266,14 @@ CI автоматически собирает и проверяет измен�
 - https://docs.spring.io/spring-boot/3.5/system-requirements.html
 - https://docs.docker.com/compose/how-tos/startup-order/
 - https://www.jenkins.io/doc/book/pipeline/syntax/
-- https://docs.gradle.org/8.14.3/userguide/gradle_wrapper.html
+- https://docs.gradle.org/8.14.4/userguide/gradle_wrapper.html
 === Processes ===
 USER         PID %CPU %MEM    VSZ   RSS TTY      STAT START   TIME COMMAND
-root           1  0.0  0.0   3020  1916 ?        Ss   15:55   0:00 sleep infinity
-root         117 23.0  0.0   4496  3400 ?        Ss   17:05   0:00 bash scripts/linux_evidence.sh
-root         129  0.0  0.0   4496  2200 ?        S    17:05   0:00 bash scripts/linux_evidence.sh
-root         130  0.0  0.0   3024  1716 ?        S    17:05   0:00 tee evidence/linux-terminal.txt
-root         156  0.0  0.1   6796  3984 ?        R    17:05   0:00 ps aux
+root           1  0.0  0.0   3020   116 ?        Ss   15:55   0:00 sleep infinity
+root         168 17.8  0.0   4496  3408 ?        Ss   17:24   0:00 bash scripts/linux_evidence.sh
+root         180  0.0  0.0   4496  2140 ?        S    17:24   0:00 bash scripts/linux_evidence.sh
+root         181  6.6  0.0   3024  1792 ?        S    17:24   0:00 tee evidence/linux-terminal.txt
+root         207  0.0  0.1   6796  4052 ?        R    17:24   0:00 ps aux
 === Java processes ===
 No Java process is running in this environment
 === Last five log lines ===
@@ -255,7 +281,7 @@ tmpfs           1.9G     0  1.9G   0% /proc/acpi
 tmpfs           1.9G     0  1.9G   0% /proc/scsi
 tmpfs           1.9G     0  1.9G   0% /sys/firmware
 Project disk usage:
-56M	/tmp/midterm-38288
+57M	/tmp/tajibayev-assylbek-student-api
 === Surname search ===
 Student: Tajibayev Assylbek
 > creates or overwrites a file; >> creates or appends to a file.

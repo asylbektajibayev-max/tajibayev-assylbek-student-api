@@ -1,0 +1,167 @@
+Started by an SCM change
+Obtained Jenkinsfile from git https://github.com/asylbektajibayev-max/tajibayev-assylbek-student-api.git
+[Pipeline] Start of Pipeline
+[Pipeline] node
+Running on Jenkins in /var/jenkins_home/workspace/Tajibayev_Assylbek_Student_API_CI_Demo
+[Pipeline] {
+[Pipeline] withEnv
+[Pipeline] {
+[Pipeline] timestamps
+[Pipeline] {
+[Pipeline] stage
+[Pipeline] { (Declarative: Tool Install)
+[Pipeline] tool
+[Pipeline] envVarsForTool
+[Pipeline] }
+[Pipeline] // stage
+[Pipeline] withEnv
+[Pipeline] {
+[Pipeline] stage
+[Pipeline] { (Checkout)
+[Pipeline] tool
+[Pipeline] envVarsForTool
+[Pipeline] withEnv
+[Pipeline] {
+[Pipeline] checkout
+[2026-10-29T17:19:19.040Z] Selected Git installation does not exist. Using Default
+[2026-10-29T17:19:19.040Z] The recommended git tool is: NONE
+[2026-10-29T17:19:19.041Z] No credentials specified
+[2026-10-29T17:19:19.041Z]  > git rev-parse --resolve-git-dir /var/jenkins_home/workspace/Tajibayev_Assylbek_Student_API_CI_Demo/.git # timeout=10
+[2026-10-29T17:19:19.054Z] Fetching changes from the remote Git repository
+[2026-10-29T17:19:19.056Z]  > git config remote.origin.url https://github.com/asylbektajibayev-max/tajibayev-assylbek-student-api.git # timeout=10
+[2026-10-29T17:19:19.061Z] Fetching upstream changes from https://github.com/asylbektajibayev-max/tajibayev-assylbek-student-api.git
+[2026-10-29T17:19:19.061Z]  > git --version # timeout=10
+[2026-10-29T17:19:19.066Z]  > git --version # 'git version 2.47.3'
+[2026-10-29T17:19:19.067Z]  > git fetch --tags --force --progress -- https://github.com/asylbektajibayev-max/tajibayev-assylbek-student-api.git +refs/heads/*:refs/remotes/origin/* # timeout=10
+[2026-10-29T17:19:20.180Z]  > git rev-parse refs/remotes/origin/feature/tajibayev-assylbek-ci-demo^{commit} # timeout=10
+[2026-10-29T17:19:20.185Z] Checking out Revision 3439ad4c5fc66e17a731afcedb8fd801c8f86eea (refs/remotes/origin/feature/tajibayev-assylbek-ci-demo)
+[2026-10-29T17:19:20.186Z]  > git config core.sparsecheckout # timeout=10
+[2026-10-29T17:19:20.192Z]  > git checkout -f 3439ad4c5fc66e17a731afcedb8fd801c8f86eea # timeout=10
+[2026-10-29T17:19:20.210Z] Commit message: "Tajibayev Assylbek: fix controlled failing test and restore green CI"
+[2026-10-29T17:19:20.211Z]  > git rev-list --no-walk 10a74ee0d1a97c21bcdd93ed73df6bee2600859e # timeout=10
+[Pipeline] echo
+[2026-10-29T17:19:20.264Z] Student: Tajibayev Assylbek
+[Pipeline] }
+[Pipeline] // withEnv
+[Pipeline] }
+[Pipeline] // stage
+[Pipeline] stage
+[Pipeline] { (Build)
+[Pipeline] tool
+[Pipeline] envVarsForTool
+[Pipeline] withEnv
+[Pipeline] {
+[Pipeline] sh
+[2026-10-29T17:19:20.783Z] + chmod +x gradlew
+[2026-10-29T17:19:20.784Z] + ./gradlew --no-daemon clean assemble
+[2026-10-29T17:19:22.130Z] To honour the JVM settings for this build a single-use Daemon process will be forked. For more on this, please refer to https://docs.gradle.org/8.14.4/userguide/gradle_daemon.html#sec:disabling_the_daemon in the Gradle documentation.
+[2026-10-29T17:19:24.002Z] Daemon will be stopped at the end of the build 
+[2026-10-29T17:19:32.030Z] > Task :clean
+[2026-10-29T17:19:33.376Z] > Task :compileJava
+[2026-10-29T17:19:33.376Z] > Task :processResources
+[2026-10-29T17:19:33.376Z] > Task :classes
+[2026-10-29T17:19:33.376Z] > Task :resolveMainClassName
+[2026-10-29T17:19:35.241Z] > Task :bootJar
+[2026-10-29T17:19:35.242Z] > Task :jar
+[2026-10-29T17:19:35.242Z] > Task :assemble
+[2026-10-29T17:19:35.242Z] 
+[2026-10-29T17:19:35.242Z] BUILD SUCCESSFUL in 14s
+[2026-10-29T17:19:35.242Z] 6 actionable tasks: 6 executed
+[Pipeline] }
+[Pipeline] // withEnv
+[Pipeline] }
+[Pipeline] // stage
+[Pipeline] stage
+[Pipeline] { (Test)
+[Pipeline] tool
+[Pipeline] envVarsForTool
+[Pipeline] withEnv
+[Pipeline] {
+[Pipeline] script
+[Pipeline] {
+[Pipeline] sh
+[2026-10-29T17:19:35.952Z] + ./gradlew --no-daemon test
+[2026-10-29T17:19:36.865Z] To honour the JVM settings for this build a single-use Daemon process will be forked. For more on this, please refer to https://docs.gradle.org/8.14.4/userguide/gradle_daemon.html#sec:disabling_the_daemon in the Gradle documentation.
+[2026-10-29T17:19:38.212Z] Daemon will be stopped at the end of the build 
+[2026-10-29T17:19:52.994Z] > Task :compileJava UP-TO-DATE
+[2026-10-29T17:19:52.995Z] > Task :processResources UP-TO-DATE
+[2026-10-29T17:19:52.995Z] > Task :classes UP-TO-DATE
+[2026-10-29T17:19:52.995Z] > Task :compileTestJava
+[2026-10-29T17:19:52.995Z] > Task :processTestResources
+[2026-10-29T17:19:52.995Z] > Task :testClasses
+[2026-10-29T17:20:05.099Z] OpenJDK 64-Bit Server VM warning: Sharing is only supported for boot loader classes because bootstrap classpath has been appended
+[2026-10-29T17:20:05.099Z] 2026-10-29T23:20:04.557+06:00  INFO 4895 --- [ionShutdownHook] j.LocalContainerEntityManagerFactoryBean : Closing JPA EntityManagerFactory for persistence unit 'default'
+[2026-10-29T17:20:05.099Z] 2026-10-29T23:20:04.561+06:00  INFO 4895 --- [ionShutdownHook] com.zaxxer.hikari.HikariDataSource       : HikariPool-1 - Shutdown initiated...
+[2026-10-29T17:20:05.099Z] 2026-10-29T23:20:04.564+06:00  INFO 4895 --- [ionShutdownHook] com.zaxxer.hikari.HikariDataSource       : HikariPool-1 - Shutdown completed.
+[2026-10-29T17:20:05.099Z] > Task :test
+[2026-10-29T17:20:05.099Z] 
+[2026-10-29T17:20:05.099Z] BUILD SUCCESSFUL in 28s
+[2026-10-29T17:20:05.099Z] 5 actionable tasks: 3 executed, 2 up-to-date
+[Pipeline] }
+[Pipeline] // script
+Post stage
+[Pipeline] archiveArtifacts
+[2026-10-29T17:20:05.201Z] Archiving artifacts
+[Pipeline] }
+[Pipeline] // withEnv
+[Pipeline] }
+[Pipeline] // stage
+[Pipeline] stage
+[Pipeline] { (Docker Build)
+[Pipeline] tool
+[Pipeline] envVarsForTool
+[Pipeline] withEnv
+[Pipeline] {
+[Pipeline] sh
+[2026-10-29T17:20:05.761Z] + docker build -t tajibayev-assylbek-student-api:v1.0-tajibayev-assylbek-38288 .
+[2026-10-29T17:20:05.762Z] DEPRECATED: The legacy builder is deprecated and will be removed in a future release.
+[2026-10-29T17:20:05.762Z]             Install the buildx component to build images with BuildKit:
+[2026-10-29T17:20:05.762Z]             https://docs.docker.com/go/buildx/
+[2026-10-29T17:20:05.762Z] 
+[2026-10-29T17:20:05.762Z] Sending build context to Docker daemon  139.3kB[2026-10-29T17:20:05.762Z] 
+[2026-10-29T17:20:06.013Z] Step 1/14 : FROM eclipse-temurin:17-jdk-jammy AS build
+[2026-10-29T17:20:06.013Z]  ---> 81336a07f69a
+[2026-10-29T17:20:06.013Z] Step 2/14 : WORKDIR /workspace
+[2026-10-29T17:20:06.371Z]  ---> Running in ed53885f90f3
+[2026-10-29T17:20:12.856Z]  ---> Removed intermediate container ed53885f90f3
+[2026-10-29T17:20:12.856Z]  ---> 3f7069b68044
+[2026-10-29T17:20:12.856Z] Step 3/14 : COPY gradlew gradlew.bat build.gradle settings.gradle ./
+[2026-10-29T17:20:13.106Z]  ---> 7cc4f8e15f6f
+[2026-10-29T17:20:13.106Z] Step 4/14 : COPY gradle gradle
+[2026-10-29T17:20:14.019Z]  ---> 396e881adcbd
+[2026-10-29T17:20:14.019Z] Step 5/14 : RUN chmod +x gradlew
+[2026-10-29T17:20:14.020Z]  ---> Running in ae6c7789bfd7
+[2026-10-29T17:20:15.365Z]  ---> Removed intermediate container ae6c7789bfd7
+[2026-10-29T17:20:15.365Z]  ---> 485a3308407a
+[2026-10-29T17:20:15.365Z] Step 6/14 : COPY src src
+[2026-10-29T17:20:15.916Z]  ---> bd5d3a035870
+[2026-10-29T17:20:15.916Z] Step 7/14 : RUN --mount=type=cache,id=midterm-38288-gradle,target=/root/.gradle ./gradlew --no-daemon clean bootJar
+[2026-10-29T17:20:15.916Z] the --mount option requires BuildKit. Refer to https://docs.docker.com/go/buildkit/ to learn how to build images with BuildKit enabled
+[Pipeline] }
+[Pipeline] // withEnv
+[Pipeline] }
+[Pipeline] // stage
+[Pipeline] stage
+[Pipeline] { (Verify)
+Stage "Verify" skipped due to earlier failure(s)
+[Pipeline] getContext
+[Pipeline] }
+[Pipeline] // stage
+[Pipeline] stage
+[Pipeline] { (Declarative: Post Actions)
+[Pipeline] echo
+[2026-10-29T17:20:16.149Z] Pipeline failed. Inspect the first failed stage in the console output.
+[Pipeline] }
+[Pipeline] // stage
+[Pipeline] }
+[Pipeline] // withEnv
+[Pipeline] }
+[Pipeline] // timestamps
+[Pipeline] }
+[Pipeline] // withEnv
+[Pipeline] }
+[Pipeline] // node
+[Pipeline] End of Pipeline
+ERROR: script returned exit code 1
+Finished: FAILURE
+

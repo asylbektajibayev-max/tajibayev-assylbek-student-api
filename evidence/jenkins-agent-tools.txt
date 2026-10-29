@@ -1,0 +1,4 @@
+openjdk version "21.0.12.1" 2026-08-18 LTS
+openjdk version "17.0.20.1" 2026-08-18
+github.com/docker/buildx v0.38.1 0dbe87f36ed472fe36b6796c3f70b4210a731fc5
+Docker client=29.9.2 server=29.4.0

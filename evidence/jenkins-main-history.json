@@ -1,0 +1,48 @@
+{
+  "_class": "org.jenkinsci.plugins.workflow.job.WorkflowJob",
+  "builds": [
+    {
+      "_class": "org.jenkinsci.plugins.workflow.job.WorkflowRun",
+      "building": false,
+      "number": 6,
+      "result": "SUCCESS",
+      "url": "http://127.0.0.1:8096/job/Tajibayev_Assylbek_Student_API/6/"
+    },
+    {
+      "_class": "org.jenkinsci.plugins.workflow.job.WorkflowRun",
+      "building": false,
+      "number": 5,
+      "result": "SUCCESS",
+      "url": "http://127.0.0.1:8096/job/Tajibayev_Assylbek_Student_API/5/"
+    },
+    {
+      "_class": "org.jenkinsci.plugins.workflow.job.WorkflowRun",
+      "building": false,
+      "number": 4,
+      "result": "FAILURE",
+      "url": "http://127.0.0.1:8096/job/Tajibayev_Assylbek_Student_API/4/"
+    },
+    {
+      "_class": "org.jenkinsci.plugins.workflow.job.WorkflowRun",
+      "building": false,
+      "number": 3,
+      "result": "FAILURE",
+      "url": "http://127.0.0.1:8096/job/Tajibayev_Assylbek_Student_API/3/"
+    },
+    {
+      "_class": "org.jenkinsci.plugins.workflow.job.WorkflowRun",
+      "building": false,
+      "number": 2,
+      "result": "FAILURE",
+      "url": "http://127.0.0.1:8096/job/Tajibayev_Assylbek_Student_API/2/"
+    },
+    {
+      "_class": "org.jenkinsci.plugins.workflow.job.WorkflowRun",
+      "building": false,
+      "number": 1,
+      "result": "ABORTED",
+      "url": "http://127.0.0.1:8096/job/Tajibayev_Assylbek_Student_API/1/"
+    }
+  ],
+  "queueItem": null
+}

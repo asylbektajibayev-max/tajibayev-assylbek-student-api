@@ -1,0 +1,2 @@
+origin	https://github.com/asylbektajibayev-max/tajibayev-assylbek-student-api.git (fetch)
+origin	https://github.com/asylbektajibayev-max/tajibayev-assylbek-student-api.git (push)

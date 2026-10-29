@@ -3,25 +3,25 @@
     "method": "POST",
     "url": "http://127.0.0.1:18080/api/students",
     "status": 201,
-    "response": "{\"id\":1,\"name\":\"Tajibayev Assylbek\",\"email\":\"student-1793294053554268700@example.org\",\"course\":\"DevOps\"}"
+    "response": "{\"id\":4,\"name\":\"Tajibayev Assylbek\",\"email\":\"student-1793294627252574600@example.org\",\"course\":\"DevOps\"}"
   },
   {
     "method": "GET",
     "url": "http://127.0.0.1:18080/api/students",
     "status": 200,
-    "response": "[{\"id\":1,\"name\":\"Tajibayev Assylbek\",\"email\":\"student-1793294053554268700@example.org\",\"course\":\"DevOps\"}]"
+    "response": "[{\"id\":3,\"name\":\"Tajibayev Assylbek\",\"email\":\"persistence-1793294098455996700@example.org\",\"course\":\"IT2 2310 DevOps 38288\"},{\"id\":4,\"name\":\"Tajibayev Assylbek\",\"email\":\"student-1793294627252574600@example.org\",\"course\":\"DevOps\"}]"
   },
   {
     "method": "GET",
-    "url": "http://127.0.0.1:18080/api/students/1",
+    "url": "http://127.0.0.1:18080/api/students/4",
     "status": 200,
-    "response": "{\"id\":1,\"name\":\"Tajibayev Assylbek\",\"email\":\"student-1793294053554268700@example.org\",\"course\":\"DevOps\"}"
+    "response": "{\"id\":4,\"name\":\"Tajibayev Assylbek\",\"email\":\"student-1793294627252574600@example.org\",\"course\":\"DevOps\"}"
   },
   {
     "method": "PUT",
-    "url": "http://127.0.0.1:18080/api/students/1",
+    "url": "http://127.0.0.1:18080/api/students/4",
     "status": 200,
-    "response": "{\"id\":1,\"name\":\"Tajibayev Assylbek\",\"email\":\"student-1793294053554268700@example.org\",\"course\":\"DevOps updated\"}"
+    "response": "{\"id\":4,\"name\":\"Tajibayev Assylbek\",\"email\":\"student-1793294627252574600@example.org\",\"course\":\"DevOps updated\"}"
   },
   {
     "method": "POST",
@@ -33,30 +33,30 @@
     "method": "POST",
     "url": "http://127.0.0.1:18080/api/students",
     "status": 400,
-    "response": "{\"timestamp\":\"2026-10-29T17:14:14.010+00:00\",\"status\":400,\"error\":\"Bad Request\",\"path\":\"/api/students\"}"
+    "response": "{\"timestamp\":\"2026-10-29T17:23:50.509+00:00\",\"status\":400,\"error\":\"Bad Request\",\"path\":\"/api/students\"}"
   },
   {
     "method": "DELETE",
-    "url": "http://127.0.0.1:18080/api/students/1",
+    "url": "http://127.0.0.1:18080/api/students/4",
     "status": 204,
     "response": ""
   },
   {
     "method": "GET",
-    "url": "http://127.0.0.1:18080/api/students/1",
+    "url": "http://127.0.0.1:18080/api/students/4",
     "status": 404,
-    "response": "{\"timestamp\":\"2026-10-29T17:14:14.052+00:00\",\"status\":404,\"error\":\"Not Found\",\"path\":\"/api/students/1\"}"
+    "response": "{\"timestamp\":\"2026-10-29T17:23:50.603+00:00\",\"status\":404,\"error\":\"Not Found\",\"path\":\"/api/students/4\"}"
   },
   {
     "method": "PUT",
-    "url": "http://127.0.0.1:18080/api/students/1",
+    "url": "http://127.0.0.1:18080/api/students/4",
     "status": 404,
-    "response": "{\"timestamp\":\"2026-10-29T17:14:14.062+00:00\",\"status\":404,\"error\":\"Not Found\",\"path\":\"/api/students/1\"}"
+    "response": "{\"timestamp\":\"2026-10-29T17:23:50.630+00:00\",\"status\":404,\"error\":\"Not Found\",\"path\":\"/api/students/4\"}"
   },
   {
     "method": "DELETE",
-    "url": "http://127.0.0.1:18080/api/students/1",
+    "url": "http://127.0.0.1:18080/api/students/4",
     "status": 404,
-    "response": "{\"timestamp\":\"2026-10-29T17:14:14.070+00:00\",\"status\":404,\"error\":\"Not Found\",\"path\":\"/api/students/1\"}"
+    "response": "{\"timestamp\":\"2026-10-29T17:23:50.647+00:00\",\"status\":404,\"error\":\"Not Found\",\"path\":\"/api/students/4\"}"
   }
 ]

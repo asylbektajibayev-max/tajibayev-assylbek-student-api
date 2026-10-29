@@ -1,0 +1,46 @@
+[
+  {
+    "command": "curl -X POST http://127.0.0.1:18080/api/students",
+    "request": {
+      "name": "Tajibayev Assylbek",
+      "email": "curl-1793294819023517400@example.org",
+      "course": "DevOps 38288 updated"
+    },
+    "status": 201,
+    "response": "{\"id\":6,\"name\":\"Tajibayev Assylbek\",\"email\":\"curl-1793294819023517400@example.org\",\"course\":\"DevOps IT2 2310\"}"
+  },
+  {
+    "command": "curl -X GET http://127.0.0.1:18080/api/students",
+    "request": null,
+    "status": 200,
+    "response": "[{\"id\":3,\"name\":\"Tajibayev Assylbek\",\"email\":\"persistence-1793294098455996700@example.org\",\"course\":\"IT2 2310 DevOps 38288\"},{\"id\":6,\"name\":\"Tajibayev Assylbek\",\"email\":\"curl-1793294819023517400@example.org\",\"course\":\"DevOps IT2 2310\"}]"
+  },
+  {
+    "command": "curl -X GET http://127.0.0.1:18080/api/students/6",
+    "request": null,
+    "status": 200,
+    "response": "{\"id\":6,\"name\":\"Tajibayev Assylbek\",\"email\":\"curl-1793294819023517400@example.org\",\"course\":\"DevOps IT2 2310\"}"
+  },
+  {
+    "command": "curl -X PUT http://127.0.0.1:18080/api/students/6",
+    "request": {
+      "name": "Tajibayev Assylbek",
+      "email": "curl-1793294819023517400@example.org",
+      "course": "DevOps 38288 updated"
+    },
+    "status": 200,
+    "response": "{\"id\":6,\"name\":\"Tajibayev Assylbek\",\"email\":\"curl-1793294819023517400@example.org\",\"course\":\"DevOps 38288 updated\"}"
+  },
+  {
+    "command": "curl -X DELETE http://127.0.0.1:18080/api/students/6",
+    "request": null,
+    "status": 204,
+    "response": ""
+  },
+  {
+    "command": "curl -X GET http://127.0.0.1:18080/api/students/6",
+    "request": null,
+    "status": 404,
+    "response": "{\"timestamp\":\"2026-10-29T17:27:00.755+00:00\",\"status\":404,\"error\":\"Not Found\",\"path\":\"/api/students/6\"}"
+  }
+]

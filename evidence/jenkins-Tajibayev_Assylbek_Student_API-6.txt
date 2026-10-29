@@ -1,0 +1,213 @@
+Started by an SCM change
+Obtained Jenkinsfile from git https://github.com/asylbektajibayev-max/tajibayev-assylbek-student-api.git
+[Pipeline] Start of Pipeline
+[Pipeline] node
+Still waiting to schedule task
+Waiting for next available executor
+Running on Jenkins in /var/jenkins_home/workspace/Tajibayev_Assylbek_Student_API
+[Pipeline] {
+[Pipeline] withEnv
+[Pipeline] {
+[Pipeline] timestamps
+[Pipeline] {
+[Pipeline] stage
+[Pipeline] { (Declarative: Tool Install)
+[Pipeline] tool
+[Pipeline] envVarsForTool
+[Pipeline] }
+[Pipeline] // stage
+[Pipeline] withEnv
+[Pipeline] {
+[Pipeline] stage
+[Pipeline] { (Checkout)
+[Pipeline] tool
+[Pipeline] envVarsForTool
+[Pipeline] withEnv
+[Pipeline] {
+[Pipeline] checkout
+[2026-10-29T17:24:09.994Z] Selected Git installation does not exist. Using Default
+[2026-10-29T17:24:09.995Z] The recommended git tool is: NONE
+[2026-10-29T17:24:09.995Z] No credentials specified
+[2026-10-29T17:24:09.995Z]  > git rev-parse --resolve-git-dir /var/jenkins_home/workspace/Tajibayev_Assylbek_Student_API/.git # timeout=10
+[2026-10-29T17:24:10.004Z] Fetching changes from the remote Git repository
+[2026-10-29T17:24:10.006Z]  > git config remote.origin.url https://github.com/asylbektajibayev-max/tajibayev-assylbek-student-api.git # timeout=10
+[2026-10-29T17:24:10.012Z] Fetching upstream changes from https://github.com/asylbektajibayev-max/tajibayev-assylbek-student-api.git
+[2026-10-29T17:24:10.012Z]  > git --version # timeout=10
+[2026-10-29T17:24:10.021Z]  > git --version # 'git version 2.47.3'
+[2026-10-29T17:24:10.022Z]  > git fetch --tags --force --progress -- https://github.com/asylbektajibayev-max/tajibayev-assylbek-student-api.git +refs/heads/*:refs/remotes/origin/* # timeout=10
+[2026-10-29T17:24:12.612Z]  > git rev-parse refs/remotes/origin/main^{commit} # timeout=10
+[2026-10-29T17:24:12.640Z] Checking out Revision 78fde19b791aff6802675118b9f39ba7a1685d4d (refs/remotes/origin/main)
+[2026-10-29T17:24:12.641Z]  > git config core.sparsecheckout # timeout=10
+[2026-10-29T17:24:12.688Z]  > git checkout -f 78fde19b791aff6802675118b9f39ba7a1685d4d # timeout=10
+[2026-10-29T17:24:12.838Z] Commit message: "Tajibayev Assylbek: require BuildKit on Docker capable Jenkins agent"
+[2026-10-29T17:24:12.840Z]  > git rev-list --no-walk 155bd6145d5de56f345b2946af084c0b0c054f28 # timeout=10
+[Pipeline] echo
+[2026-10-29T17:24:13.293Z] Student: Tajibayev Assylbek
+[Pipeline] }
+[Pipeline] // withEnv
+[Pipeline] }
+[Pipeline] // stage
+[Pipeline] stage
+[Pipeline] { (Build)
+[Pipeline] tool
+[Pipeline] envVarsForTool
+[Pipeline] withEnv
+[Pipeline] {
+[Pipeline] sh
+[2026-10-29T17:24:13.833Z] + chmod +x gradlew
+[2026-10-29T17:24:13.833Z] + ./gradlew --no-daemon clean assemble
+[2026-10-29T17:24:14.746Z] To honour the JVM settings for this build a single-use Daemon process will be forked. For more on this, please refer to https://docs.gradle.org/8.14.4/userguide/gradle_daemon.html#sec:disabling_the_daemon in the Gradle documentation.
+[2026-10-29T17:24:15.657Z] Daemon will be stopped at the end of the build 
+[2026-10-29T17:24:27.773Z] > Task :clean
+[2026-10-29T17:24:28.024Z] > Task :compileJava
+[2026-10-29T17:24:28.275Z] > Task :processResources
+[2026-10-29T17:24:28.276Z] > Task :classes
+[2026-10-29T17:24:28.276Z] > Task :resolveMainClassName
+[2026-10-29T17:24:31.509Z] > Task :bootJar
+[2026-10-29T17:24:31.509Z] > Task :jar
+[2026-10-29T17:24:31.509Z] > Task :assemble
+[2026-10-29T17:24:31.509Z] 
+[2026-10-29T17:24:31.509Z] BUILD SUCCESSFUL in 17s
+[2026-10-29T17:24:31.509Z] 6 actionable tasks: 6 executed
+[Pipeline] }
+[Pipeline] // withEnv
+[Pipeline] }
+[Pipeline] // stage
+[Pipeline] stage
+[Pipeline] { (Test)
+[Pipeline] tool
+[Pipeline] envVarsForTool
+[Pipeline] withEnv
+[Pipeline] {
+[Pipeline] sh
+[2026-10-29T17:24:32.311Z] + ./gradlew --no-daemon test
+[2026-10-29T17:24:32.863Z] To honour the JVM settings for this build a single-use Daemon process will be forked. For more on this, please refer to https://docs.gradle.org/8.14.4/userguide/gradle_daemon.html#sec:disabling_the_daemon in the Gradle documentation.
+[2026-10-29T17:24:34.220Z] Daemon will be stopped at the end of the build 
+[2026-10-29T17:24:42.255Z] > Task :compileJava UP-TO-DATE
+[2026-10-29T17:24:42.255Z] > Task :processResources UP-TO-DATE
+[2026-10-29T17:24:42.255Z] > Task :classes UP-TO-DATE
+[2026-10-29T17:24:43.601Z] > Task :compileTestJava
+[2026-10-29T17:24:43.601Z] > Task :processTestResources
+[2026-10-29T17:24:43.601Z] > Task :testClasses
+[2026-10-29T17:24:51.633Z] OpenJDK 64-Bit Server VM warning: Sharing is only supported for boot loader classes because bootstrap classpath has been appended
+[2026-10-29T17:24:52.184Z] 2026-10-29T23:24:51.968+06:00  INFO 7955 --- [ionShutdownHook] j.LocalContainerEntityManagerFactoryBean : Closing JPA EntityManagerFactory for persistence unit 'default'
+[2026-10-29T17:24:52.184Z] 2026-10-29T23:24:51.974+06:00  INFO 7955 --- [ionShutdownHook] com.zaxxer.hikari.HikariDataSource       : HikariPool-1 - Shutdown initiated...
+[2026-10-29T17:24:52.184Z] 2026-10-29T23:24:51.977+06:00  INFO 7955 --- [ionShutdownHook] com.zaxxer.hikari.HikariDataSource       : HikariPool-1 - Shutdown completed.
+[2026-10-29T17:24:52.185Z] > Task :test
+[2026-10-29T17:24:52.185Z] 
+[2026-10-29T17:24:52.185Z] BUILD SUCCESSFUL in 19s
+[2026-10-29T17:24:52.185Z] 5 actionable tasks: 3 executed, 2 up-to-date
+Post stage
+[Pipeline] archiveArtifacts
+[2026-10-29T17:24:52.516Z] Archiving artifacts
+[Pipeline] }
+[Pipeline] // withEnv
+[Pipeline] }
+[Pipeline] // stage
+[Pipeline] stage
+[Pipeline] { (Docker Build)
+[Pipeline] tool
+[Pipeline] envVarsForTool
+[Pipeline] withEnv
+[Pipeline] {
+[Pipeline] sh
+[2026-10-29T17:24:53.103Z] + docker build -t tajibayev-assylbek-student-api:v1.1-tajibayev-assylbek-38288 .
+[2026-10-29T17:24:54.016Z] #0 building with "default" instance using docker driver
+[2026-10-29T17:24:54.016Z] 
+[2026-10-29T17:24:54.016Z] #1 [internal] load build definition from Dockerfile
+[2026-10-29T17:24:54.016Z] #1 transferring dockerfile: 570B done
+[2026-10-29T17:24:54.016Z] #1 DONE 0.0s
+[2026-10-29T17:24:54.016Z] 
+[2026-10-29T17:24:54.016Z] #2 [internal] load metadata for docker.io/library/eclipse-temurin:17-jdk-jammy
+[2026-10-29T17:24:54.016Z] #2 DONE 0.0s
+[2026-10-29T17:24:54.016Z] 
+[2026-10-29T17:24:54.016Z] #3 [internal] load metadata for docker.io/library/eclipse-temurin:17-jre-jammy
+[2026-10-29T17:24:54.569Z] #3 DONE 0.8s
+[2026-10-29T17:24:54.569Z] 
+[2026-10-29T17:24:54.569Z] #4 [internal] load .dockerignore
+[2026-10-29T17:24:54.569Z] #4 transferring context: 78B done
+[2026-10-29T17:24:54.569Z] #4 DONE 0.0s
+[2026-10-29T17:24:54.569Z] 
+[2026-10-29T17:24:54.569Z] #5 [build 1/7] FROM docker.io/library/eclipse-temurin:17-jdk-jammy@sha256:81336a07f69ac361c7f278183b195e32037ebdb532684996806265a3b47ef516
+[2026-10-29T17:24:54.569Z] #5 resolve docker.io/library/eclipse-temurin:17-jdk-jammy@sha256:81336a07f69ac361c7f278183b195e32037ebdb532684996806265a3b47ef516 0.0s done
+[2026-10-29T17:24:54.569Z] #5 DONE 0.0s
+[2026-10-29T17:24:54.569Z] 
+[2026-10-29T17:24:54.569Z] #6 [stage-1 1/4] FROM docker.io/library/eclipse-temurin:17-jre-jammy@sha256:c35794d1348777e6bc310b9b7f420098ef8f37e988199549b545fded79a895a2
+[2026-10-29T17:24:54.569Z] #6 resolve docker.io/library/eclipse-temurin:17-jre-jammy@sha256:c35794d1348777e6bc310b9b7f420098ef8f37e988199549b545fded79a895a2 0.0s done
+[2026-10-29T17:24:54.569Z] #6 DONE 0.0s
+[2026-10-29T17:24:54.569Z] 
+[2026-10-29T17:24:54.569Z] #7 [internal] load build context
+[2026-10-29T17:24:54.569Z] #7 transferring context: 10.08kB done
+[2026-10-29T17:24:54.569Z] #7 DONE 0.0s
+[2026-10-29T17:24:54.569Z] 
+[2026-10-29T17:24:54.569Z] #8 [stage-1 2/4] WORKDIR /app
+[2026-10-29T17:24:54.569Z] #8 CACHED
+[2026-10-29T17:24:54.569Z] 
+[2026-10-29T17:24:54.569Z] #9 [build 4/7] COPY gradle gradle
+[2026-10-29T17:24:54.569Z] #9 CACHED
+[2026-10-29T17:24:54.569Z] 
+[2026-10-29T17:24:54.569Z] #10 [stage-1 3/4] RUN groupadd --system app && useradd --system --gid app app
+[2026-10-29T17:24:54.569Z] #10 CACHED
+[2026-10-29T17:24:54.569Z] 
+[2026-10-29T17:24:54.569Z] #11 [build 6/7] COPY src src
+[2026-10-29T17:24:54.569Z] #11 CACHED
+[2026-10-29T17:24:54.569Z] 
+[2026-10-29T17:24:54.569Z] #12 [build 2/7] WORKDIR /workspace
+[2026-10-29T17:24:54.569Z] #12 CACHED
+[2026-10-29T17:24:54.569Z] 
+[2026-10-29T17:24:54.569Z] #13 [build 3/7] COPY gradlew gradlew.bat build.gradle settings.gradle ./
+[2026-10-29T17:24:54.569Z] #13 CACHED
+[2026-10-29T17:24:54.569Z] 
+[2026-10-29T17:24:54.569Z] #14 [build 5/7] RUN chmod +x gradlew
+[2026-10-29T17:24:54.569Z] #14 CACHED
+[2026-10-29T17:24:54.569Z] 
+[2026-10-29T17:24:54.569Z] #15 [build 7/7] RUN --mount=type=cache,id=midterm-38288-gradle,target=/root/.gradle ./gradlew --no-daemon clean bootJar
+[2026-10-29T17:24:54.569Z] #15 CACHED
+[2026-10-29T17:24:54.569Z] 
+[2026-10-29T17:24:54.569Z] #16 [stage-1 4/4] COPY --from=build --chown=app:app /workspace/build/libs/student-api.jar /app/app.jar
+[2026-10-29T17:24:54.569Z] #16 CACHED
+[2026-10-29T17:24:54.569Z] 
+[2026-10-29T17:24:54.569Z] #17 exporting to image
+[2026-10-29T17:24:54.569Z] #17 exporting layers done
+[2026-10-29T17:24:54.569Z] #17 exporting manifest sha256:09c703570f5979a960d5041c86eca49fa0f497c233d6c2d50fd5190b2c2c5e2a done
+[2026-10-29T17:24:54.570Z] #17 exporting config sha256:db10c97db72214b14388e78e23c10dc9e26795d99d73771ec846ed18c6eb29c4
+[2026-10-29T17:24:54.570Z] #17 exporting config sha256:db10c97db72214b14388e78e23c10dc9e26795d99d73771ec846ed18c6eb29c4 done
+[2026-10-29T17:24:54.570Z] #17 exporting attestation manifest sha256:739bac3067851e4144d46b90c4cb43ac2b50ffe4fdca9c9fa46fbfb787c3643c 0.0s done
+[2026-10-29T17:24:54.570Z] #17 exporting manifest list sha256:e124051fda261a3bf08d29a7b73aa997cf5784d8e8bce3a551c76761a6853c43 0.0s done
+[2026-10-29T17:24:54.570Z] #17 naming to docker.io/library/tajibayev-assylbek-student-api:v1.1-tajibayev-assylbek-38288 done
+[2026-10-29T17:24:54.570Z] #17 unpacking to docker.io/library/tajibayev-assylbek-student-api:v1.1-tajibayev-assylbek-38288 done
+[2026-10-29T17:24:54.570Z] #17 DONE 0.1s
+[Pipeline] }
+[Pipeline] // withEnv
+[Pipeline] }
+[Pipeline] // stage
+[Pipeline] stage
+[Pipeline] { (Verify)
+[Pipeline] tool
+[Pipeline] envVarsForTool
+[Pipeline] withEnv
+[Pipeline] {
+[Pipeline] sh
+[2026-10-29T17:24:55.739Z] + docker image inspect tajibayev-assylbek-student-api:v1.1-tajibayev-assylbek-38288 --format Image={{.Id}} Size={{.Size}} Created={{.Created}}
+[2026-10-29T17:24:55.739Z] Image=sha256:e124051fda261a3bf08d29a7b73aa997cf5784d8e8bce3a551c76761a6853c43 Size=144022118 Created=2026-10-29T17:22:40.453724734Z
+[Pipeline] }
+[Pipeline] // withEnv
+[Pipeline] }
+[Pipeline] // stage
+[Pipeline] stage
+[Pipeline] { (Declarative: Post Actions)
+[Pipeline] echo
+[2026-10-29T17:24:55.943Z] Build, tests and Docker image verification succeeded.
+[Pipeline] }
+[Pipeline] // stage
+[Pipeline] }
+[Pipeline] // withEnv
+[Pipeline] }
+[Pipeline] // timestamps
+[Pipeline] }
+[Pipeline] // withEnv
+[Pipeline] }
+[Pipeline] // node
+[Pipeline] End of Pipeline
+Finished: SUCCESS
+

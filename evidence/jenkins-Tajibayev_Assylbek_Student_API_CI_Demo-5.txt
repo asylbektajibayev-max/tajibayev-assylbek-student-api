@@ -1,0 +1,158 @@
+Started by user assylbek
+Obtained Jenkinsfile from git https://github.com/asylbektajibayev-max/tajibayev-assylbek-student-api.git
+[Pipeline] Start of Pipeline
+[Pipeline] node
+Still waiting to schedule task
+Waiting for next available executor
+Running on Jenkins in /var/jenkins_home/workspace/Tajibayev_Assylbek_Student_API_CI_Demo
+[Pipeline] {
+[Pipeline] withEnv
+[Pipeline] {
+[Pipeline] timestamps
+[Pipeline] {
+[Pipeline] stage
+[Pipeline] { (Declarative: Tool Install)
+[Pipeline] tool
+[Pipeline] envVarsForTool
+[Pipeline] }
+[Pipeline] // stage
+[Pipeline] withEnv
+[Pipeline] {
+[Pipeline] stage
+[Pipeline] { (Checkout)
+[Pipeline] tool
+[Pipeline] envVarsForTool
+[Pipeline] withEnv
+[Pipeline] {
+[Pipeline] checkout
+[2026-10-29T17:24:56.827Z] Selected Git installation does not exist. Using Default
+[2026-10-29T17:24:56.827Z] The recommended git tool is: NONE
+[2026-10-29T17:24:56.827Z] No credentials specified
+[2026-10-29T17:24:56.828Z]  > git rev-parse --resolve-git-dir /var/jenkins_home/workspace/Tajibayev_Assylbek_Student_API_CI_Demo/.git # timeout=10
+[2026-10-29T17:24:56.833Z] Fetching changes from the remote Git repository
+[2026-10-29T17:24:56.837Z]  > git config remote.origin.url https://github.com/asylbektajibayev-max/tajibayev-assylbek-student-api.git # timeout=10
+[2026-10-29T17:24:56.841Z] Fetching upstream changes from https://github.com/asylbektajibayev-max/tajibayev-assylbek-student-api.git
+[2026-10-29T17:24:56.841Z]  > git --version # timeout=10
+[2026-10-29T17:24:56.845Z]  > git --version # 'git version 2.47.3'
+[2026-10-29T17:24:56.845Z]  > git fetch --tags --force --progress -- https://github.com/asylbektajibayev-max/tajibayev-assylbek-student-api.git +refs/heads/*:refs/remotes/origin/* # timeout=10
+[2026-10-29T17:24:59.050Z]  > git rev-parse refs/remotes/origin/feature/tajibayev-assylbek-ci-demo^{commit} # timeout=10
+[2026-10-29T17:24:59.055Z] Checking out Revision cb68244205a6d1e3d3629aa40295cbc599052e9f (refs/remotes/origin/feature/tajibayev-assylbek-ci-demo)
+[2026-10-29T17:24:59.055Z]  > git config core.sparsecheckout # timeout=10
+[2026-10-29T17:24:59.058Z]  > git checkout -f cb68244205a6d1e3d3629aa40295cbc599052e9f # timeout=10
+[2026-10-29T17:24:59.074Z] Commit message: "Tajibayev Assylbek: demonstrate failed test after successful baseline pipeline"
+[2026-10-29T17:24:59.074Z]  > git rev-list --no-walk 58f9c11cd2cc6dc283e68d2a7ddb5bb789ecbc0d # timeout=10
+[Pipeline] echo
+[2026-10-29T17:24:59.111Z] Student: Tajibayev Assylbek
+[Pipeline] }
+[Pipeline] // withEnv
+[Pipeline] }
+[Pipeline] // stage
+[Pipeline] stage
+[Pipeline] { (Build)
+[Pipeline] tool
+[Pipeline] envVarsForTool
+[Pipeline] withEnv
+[Pipeline] {
+[Pipeline] sh
+[2026-10-29T17:24:59.593Z] + chmod +x gradlew
+[2026-10-29T17:24:59.593Z] + ./gradlew --no-daemon clean assemble
+[2026-10-29T17:25:00.144Z] To honour the JVM settings for this build a single-use Daemon process will be forked. For more on this, please refer to https://docs.gradle.org/8.14.4/userguide/gradle_daemon.html#sec:disabling_the_daemon in the Gradle documentation.
+[2026-10-29T17:25:01.488Z] Daemon will be stopped at the end of the build 
+[2026-10-29T17:25:09.521Z] > Task :clean
+[2026-10-29T17:25:09.772Z] > Task :compileJava
+[2026-10-29T17:25:09.772Z] > Task :processResources
+[2026-10-29T17:25:09.772Z] > Task :classes
+[2026-10-29T17:25:09.772Z] > Task :resolveMainClassName
+[2026-10-29T17:25:11.120Z] > Task :bootJar
+[2026-10-29T17:25:11.120Z] > Task :jar
+[2026-10-29T17:25:11.120Z] > Task :assemble
+[2026-10-29T17:25:11.120Z] 
+[2026-10-29T17:25:11.120Z] BUILD SUCCESSFUL in 11s
+[2026-10-29T17:25:11.120Z] 6 actionable tasks: 6 executed
+[Pipeline] }
+[Pipeline] // withEnv
+[Pipeline] }
+[Pipeline] // stage
+[Pipeline] stage
+[Pipeline] { (Test)
+[Pipeline] tool
+[Pipeline] envVarsForTool
+[Pipeline] withEnv
+[Pipeline] {
+[Pipeline] script
+[Pipeline] {
+[Pipeline] sh
+[2026-10-29T17:25:11.609Z] + ./gradlew --no-daemon test
+[2026-10-29T17:25:12.160Z] To honour the JVM settings for this build a single-use Daemon process will be forked. For more on this, please refer to https://docs.gradle.org/8.14.4/userguide/gradle_daemon.html#sec:disabling_the_daemon in the Gradle documentation.
+[2026-10-29T17:25:13.506Z] Daemon will be stopped at the end of the build 
+[2026-10-29T17:25:21.535Z] > Task :compileJava UP-TO-DATE
+[2026-10-29T17:25:21.535Z] > Task :processResources UP-TO-DATE
+[2026-10-29T17:25:21.535Z] > Task :classes UP-TO-DATE
+[2026-10-29T17:25:22.447Z] > Task :compileTestJava
+[2026-10-29T17:25:22.447Z] > Task :processTestResources
+[2026-10-29T17:25:22.447Z] > Task :testClasses
+[2026-10-29T17:25:30.473Z] OpenJDK 64-Bit Server VM warning: Sharing is only supported for boot loader classes because bootstrap classpath has been appended
+[2026-10-29T17:25:31.025Z] 
+[2026-10-29T17:25:31.025Z] > Task :test
+[2026-10-29T17:25:31.025Z] 
+[2026-10-29T17:25:31.025Z] StudentApiTest > controlledFailure() FAILED
+[2026-10-29T17:25:31.025Z]     org.opentest4j.AssertionFailedError at StudentApiTest.java:40
+[2026-10-29T17:25:31.277Z] 
+[2026-10-29T17:25:31.277Z] 2026-10-29T23:25:31.101+06:00  INFO 8687 --- [ionShutdownHook] j.LocalContainerEntityManagerFactoryBean : Closing JPA EntityManagerFactory for persistence unit 'default'
+[2026-10-29T17:25:31.277Z] 2026-10-29T23:25:31.110+06:00  INFO 8687 --- [ionShutdownHook] com.zaxxer.hikari.HikariDataSource       : HikariPool-1 - Shutdown initiated...
+[2026-10-29T17:25:31.277Z] 2026-10-29T23:25:31.114+06:00  INFO 8687 --- [ionShutdownHook] com.zaxxer.hikari.HikariDataSource       : HikariPool-1 - Shutdown completed.
+[2026-10-29T17:25:31.528Z] 
+[2026-10-29T17:25:31.528Z] > Task :test FAILED
+[2026-10-29T17:25:31.528Z] 
+[2026-10-29T17:25:31.528Z] 6 tests completed, 1 failed
+[2026-10-29T17:25:31.528Z] 
+[2026-10-29T17:25:31.528Z] FAILURE: Build failed with an exception.
+[2026-10-29T17:25:31.528Z] 
+[2026-10-29T17:25:31.528Z] * What went wrong:
+[2026-10-29T17:25:31.528Z] Execution failed for task ':test'.
+[2026-10-29T17:25:31.528Z] > There were failing tests. See the report at: file:///var/jenkins_home/workspace/Tajibayev_Assylbek_Student_API_CI_Demo/build/reports/tests/test/index.html
+[2026-10-29T17:25:31.528Z] 
+[2026-10-29T17:25:31.528Z] * Try:
+[2026-10-29T17:25:31.528Z] > Run with --scan to get full insights.
+[2026-10-29T17:25:31.528Z] 
+[2026-10-29T17:25:31.528Z] BUILD FAILED in 19s
+[2026-10-29T17:25:31.528Z] 5 actionable tasks: 3 executed, 2 up-to-date
+[Pipeline] }
+[Pipeline] // script
+Post stage
+[Pipeline] archiveArtifacts
+[2026-10-29T17:25:31.653Z] Archiving artifacts
+[Pipeline] }
+[Pipeline] // withEnv
+[Pipeline] }
+[Pipeline] // stage
+[Pipeline] stage
+[Pipeline] { (Docker Build)
+Stage "Docker Build" skipped due to earlier failure(s)
+[Pipeline] getContext
+[Pipeline] }
+[Pipeline] // stage
+[Pipeline] stage
+[Pipeline] { (Verify)
+Stage "Verify" skipped due to earlier failure(s)
+[Pipeline] getContext
+[Pipeline] }
+[Pipeline] // stage
+[Pipeline] stage
+[Pipeline] { (Declarative: Post Actions)
+[Pipeline] echo
+[2026-10-29T17:25:32.058Z] Pipeline failed. Inspect the first failed stage in the console output.
+[Pipeline] }
+[Pipeline] // stage
+[Pipeline] }
+[Pipeline] // withEnv
+[Pipeline] }
+[Pipeline] // timestamps
+[Pipeline] }
+[Pipeline] // withEnv
+[Pipeline] }
+[Pipeline] // node
+[Pipeline] End of Pipeline
+ERROR: script returned exit code 1
+Finished: FAILURE
+

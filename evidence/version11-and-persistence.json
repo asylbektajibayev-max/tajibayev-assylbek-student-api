@@ -1,0 +1,13 @@
+{
+  "persistentStudent": {
+    "id": 3,
+    "name": "Tajibayev Assylbek",
+    "email": "persistence-1793294098455996700@example.org",
+    "course": "IT2 2310 DevOps 38288"
+  },
+  "application": {
+    "application": "Student API",
+    "student": "Tajibayev Assylbek",
+    "version": "1.1"
+  }
+}

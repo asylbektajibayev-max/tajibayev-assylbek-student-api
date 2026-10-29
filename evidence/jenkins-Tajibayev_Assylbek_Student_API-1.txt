@@ -58,4 +58,39 @@ Running on Jenkins in /var/jenkins_home/workspace/Tajibayev_Assylbek_Student_API
 [2026-10-29T17:13:02.267Z] + chmod +x gradlew
 [2026-10-29T17:13:02.267Z] + ./gradlew --no-daemon clean assemble
 [2026-10-29T17:13:02.523Z] Downloading https://services.gradle.org/distributions/gradle-8.14.4-bin.zip
+[2026-10-29T17:14:34.616Z] .......Sending interrupt signal to process
+Aborted by assylbek
+[Pipeline] }
+[Pipeline] // withEnv
+[Pipeline] }
+[Pipeline] // stage
+[Pipeline] stage
+[Pipeline] { (Test)
+Stage "Test" skipped due to earlier failure(s)
+[Pipeline] getContext
+[Pipeline] }
+[Pipeline] // stage
+[Pipeline] stage
+[Pipeline] { (Docker Build)
+Stage "Docker Build" skipped due to earlier failure(s)
+[Pipeline] getContext
+[Pipeline] }
+[Pipeline] // stage
+[Pipeline] stage
+[Pipeline] { (Verify)
+Stage "Verify" skipped due to earlier failure(s)
+[Pipeline] getContext
+[Pipeline] }
+[Pipeline] // stage
+[Pipeline] }
+[Pipeline] // withEnv
+[Pipeline] }
+[Pipeline] // timestamps
+[Pipeline] }
+[Pipeline] // withEnv
+[Pipeline] }
+[Pipeline] // node
+[Pipeline] End of Pipeline
+org.jenkinsci.plugins.workflow.actions.ErrorAction$ErrorId: ad60cf9f-1858-4694-a203-e09573772010
+Finished: ABORTED
 

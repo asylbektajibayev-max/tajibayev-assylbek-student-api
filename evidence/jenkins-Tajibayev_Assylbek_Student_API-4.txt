@@ -1,0 +1,168 @@
+Started by an SCM change
+Obtained Jenkinsfile from git https://github.com/asylbektajibayev-max/tajibayev-assylbek-student-api.git
+[Pipeline] Start of Pipeline
+[Pipeline] node
+Still waiting to schedule task
+Waiting for next available executor
+Running on Jenkins in /var/jenkins_home/workspace/Tajibayev_Assylbek_Student_API
+[Pipeline] {
+[Pipeline] withEnv
+[Pipeline] {
+[Pipeline] timestamps
+[Pipeline] {
+[Pipeline] stage
+[Pipeline] { (Declarative: Tool Install)
+[Pipeline] tool
+[Pipeline] envVarsForTool
+[Pipeline] }
+[Pipeline] // stage
+[Pipeline] withEnv
+[Pipeline] {
+[Pipeline] stage
+[Pipeline] { (Checkout)
+[Pipeline] tool
+[Pipeline] envVarsForTool
+[Pipeline] withEnv
+[Pipeline] {
+[Pipeline] checkout
+[2026-10-29T17:20:16.710Z] Selected Git installation does not exist. Using Default
+[2026-10-29T17:20:16.710Z] The recommended git tool is: NONE
+[2026-10-29T17:20:16.711Z] No credentials specified
+[2026-10-29T17:20:16.714Z]  > git rev-parse --resolve-git-dir /var/jenkins_home/workspace/Tajibayev_Assylbek_Student_API/.git # timeout=10
+[2026-10-29T17:20:16.724Z] Fetching changes from the remote Git repository
+[2026-10-29T17:20:16.730Z]  > git config remote.origin.url https://github.com/asylbektajibayev-max/tajibayev-assylbek-student-api.git # timeout=10
+[2026-10-29T17:20:16.734Z] Fetching upstream changes from https://github.com/asylbektajibayev-max/tajibayev-assylbek-student-api.git
+[2026-10-29T17:20:16.734Z]  > git --version # timeout=10
+[2026-10-29T17:20:16.738Z]  > git --version # 'git version 2.47.3'
+[2026-10-29T17:20:16.738Z]  > git fetch --tags --force --progress -- https://github.com/asylbektajibayev-max/tajibayev-assylbek-student-api.git +refs/heads/*:refs/remotes/origin/* # timeout=10
+[2026-10-29T17:20:18.332Z]  > git rev-parse refs/remotes/origin/main^{commit} # timeout=10
+[2026-10-29T17:20:18.336Z] Checking out Revision 8135975ce17545e4f97d9bdcaf08d06cb0ac2859 (refs/remotes/origin/main)
+[2026-10-29T17:20:18.337Z]  > git config core.sparsecheckout # timeout=10
+[2026-10-29T17:20:18.341Z]  > git checkout -f 8135975ce17545e4f97d9bdcaf08d06cb0ac2859 # timeout=10
+[2026-10-29T17:20:18.360Z] Commit message: "Tajibayev Assylbek: bump application to 1.1 for Docker rebuild demonstration"
+[2026-10-29T17:20:18.361Z]  > git rev-list --no-walk 3dae6d6559f77451ac24aa2689f446ded0b62ec9 # timeout=10
+[Pipeline] echo
+[2026-10-29T17:20:18.403Z] Student: Tajibayev Assylbek
+[Pipeline] }
+[Pipeline] // withEnv
+[Pipeline] }
+[Pipeline] // stage
+[Pipeline] stage
+[Pipeline] { (Build)
+[Pipeline] tool
+[Pipeline] envVarsForTool
+[Pipeline] withEnv
+[Pipeline] {
+[Pipeline] sh
+[2026-10-29T17:20:18.943Z] + chmod +x gradlew
+[2026-10-29T17:20:18.943Z] + ./gradlew --no-daemon clean assemble
+[2026-10-29T17:20:19.855Z] To honour the JVM settings for this build a single-use Daemon process will be forked. For more on this, please refer to https://docs.gradle.org/8.14.4/userguide/gradle_daemon.html#sec:disabling_the_daemon in the Gradle documentation.
+[2026-10-29T17:20:21.199Z] Daemon will be stopped at the end of the build 
+[2026-10-29T17:20:30.997Z] > Task :clean
+[2026-10-29T17:20:31.910Z] > Task :compileJava
+[2026-10-29T17:20:31.910Z] > Task :processResources
+[2026-10-29T17:20:31.910Z] > Task :classes
+[2026-10-29T17:20:31.910Z] > Task :resolveMainClassName
+[2026-10-29T17:20:36.049Z] > Task :bootJar
+[2026-10-29T17:20:36.049Z] > Task :jar
+[2026-10-29T17:20:36.049Z] > Task :assemble
+[2026-10-29T17:20:36.049Z] 
+[2026-10-29T17:20:36.049Z] BUILD SUCCESSFUL in 16s
+[2026-10-29T17:20:36.050Z] 6 actionable tasks: 6 executed
+[Pipeline] }
+[Pipeline] // withEnv
+[Pipeline] }
+[Pipeline] // stage
+[Pipeline] stage
+[Pipeline] { (Test)
+[Pipeline] tool
+[Pipeline] envVarsForTool
+[Pipeline] withEnv
+[Pipeline] {
+[Pipeline] script
+[Pipeline] {
+[Pipeline] sh
+[2026-10-29T17:20:37.300Z] + ./gradlew --no-daemon test
+[2026-10-29T17:20:38.648Z] To honour the JVM settings for this build a single-use Daemon process will be forked. For more on this, please refer to https://docs.gradle.org/8.14.4/userguide/gradle_daemon.html#sec:disabling_the_daemon in the Gradle documentation.
+[2026-10-29T17:20:40.526Z] Daemon will be stopped at the end of the build 
+[2026-10-29T17:20:58.482Z] > Task :compileJava UP-TO-DATE
+[2026-10-29T17:20:58.482Z] > Task :processResources UP-TO-DATE
+[2026-10-29T17:20:58.482Z] > Task :classes UP-TO-DATE
+[2026-10-29T17:21:01.732Z] > Task :compileTestJava
+[2026-10-29T17:21:01.733Z] > Task :processTestResources
+[2026-10-29T17:21:01.733Z] > Task :testClasses
+[2026-10-29T17:21:23.576Z] OpenJDK 64-Bit Server VM warning: Sharing is only supported for boot loader classes because bootstrap classpath has been appended
+[2026-10-29T17:21:23.576Z] 2026-10-29T23:21:22.819+06:00  INFO 5590 --- [ionShutdownHook] j.LocalContainerEntityManagerFactoryBean : Closing JPA EntityManagerFactory for persistence unit 'default'
+[2026-10-29T17:21:23.576Z] 2026-10-29T23:21:22.824+06:00  INFO 5590 --- [ionShutdownHook] com.zaxxer.hikari.HikariDataSource       : HikariPool-1 - Shutdown initiated...
+[2026-10-29T17:21:23.576Z] 2026-10-29T23:21:22.826+06:00  INFO 5590 --- [ionShutdownHook] com.zaxxer.hikari.HikariDataSource       : HikariPool-1 - Shutdown completed.
+[2026-10-29T17:21:23.576Z] > Task :test
+[2026-10-29T17:21:23.576Z] 
+[2026-10-29T17:21:23.576Z] BUILD SUCCESSFUL in 45s
+[2026-10-29T17:21:23.576Z] 5 actionable tasks: 3 executed, 2 up-to-date
+[Pipeline] }
+[Pipeline] // script
+Post stage
+[Pipeline] archiveArtifacts
+[2026-10-29T17:21:23.838Z] Archiving artifacts
+[Pipeline] }
+[Pipeline] // withEnv
+[Pipeline] }
+[Pipeline] // stage
+[Pipeline] stage
+[Pipeline] { (Docker Build)
+[Pipeline] tool
+[Pipeline] envVarsForTool
+[Pipeline] withEnv
+[Pipeline] {
+[Pipeline] sh
+[2026-10-29T17:21:24.473Z] + docker build -t tajibayev-assylbek-student-api:v1.1-tajibayev-assylbek-38288 .
+[2026-10-29T17:21:24.473Z] DEPRECATED: The legacy builder is deprecated and will be removed in a future release.
+[2026-10-29T17:21:24.473Z]             Install the buildx component to build images with BuildKit:
+[2026-10-29T17:21:24.473Z]             https://docs.docker.com/go/buildx/
+[2026-10-29T17:21:24.473Z] 
+[2026-10-29T17:21:24.473Z] Sending build context to Docker daemon  139.3kB[2026-10-29T17:21:24.473Z] 
+[2026-10-29T17:21:24.473Z] Step 1/14 : FROM eclipse-temurin:17-jdk-jammy AS build
+[2026-10-29T17:21:24.473Z]  ---> 81336a07f69a
+[2026-10-29T17:21:24.473Z] Step 2/14 : WORKDIR /workspace
+[2026-10-29T17:21:24.473Z]  ---> Using cache
+[2026-10-29T17:21:24.473Z]  ---> 3f7069b68044
+[2026-10-29T17:21:24.473Z] Step 3/14 : COPY gradlew gradlew.bat build.gradle settings.gradle ./
+[2026-10-29T17:21:36.565Z]  ---> 86d0a8bdcba8
+[2026-10-29T17:21:36.565Z] Step 4/14 : COPY gradle gradle
+[2026-10-29T17:21:36.565Z]  ---> e347e107a6f6
+[2026-10-29T17:21:36.565Z] Step 5/14 : RUN chmod +x gradlew
+[2026-10-29T17:21:36.566Z]  ---> Running in 7066c16f5de8
+[2026-10-29T17:21:38.434Z]  ---> Removed intermediate container 7066c16f5de8
+[2026-10-29T17:21:38.434Z]  ---> cddf8e5cc725
+[2026-10-29T17:21:38.434Z] Step 6/14 : COPY src src
+[2026-10-29T17:21:39.351Z]  ---> af8fd743bc35
+[2026-10-29T17:21:39.351Z] Step 7/14 : RUN --mount=type=cache,id=midterm-38288-gradle,target=/root/.gradle ./gradlew --no-daemon clean bootJar
+[2026-10-29T17:21:39.352Z] the --mount option requires BuildKit. Refer to https://docs.docker.com/go/buildkit/ to learn how to build images with BuildKit enabled
+[Pipeline] }
+[Pipeline] // withEnv
+[Pipeline] }
+[Pipeline] // stage
+[Pipeline] stage
+[Pipeline] { (Verify)
+Stage "Verify" skipped due to earlier failure(s)
+[Pipeline] getContext
+[Pipeline] }
+[Pipeline] // stage
+[Pipeline] stage
+[Pipeline] { (Declarative: Post Actions)
+[Pipeline] echo
+[2026-10-29T17:21:40.077Z] Pipeline failed. Inspect the first failed stage in the console output.
+[Pipeline] }
+[Pipeline] // stage
+[Pipeline] }
+[Pipeline] // withEnv
+[Pipeline] }
+[Pipeline] // timestamps
+[Pipeline] }
+[Pipeline] // withEnv
+[Pipeline] }
+[Pipeline] // node
+[Pipeline] End of Pipeline
+ERROR: script returned exit code 1
+Finished: FAILURE
+

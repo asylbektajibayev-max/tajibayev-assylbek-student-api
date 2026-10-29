@@ -1,0 +1,25 @@
+* 2e603a6 (origin/feature/tajibayev-assylbek-ci-demo, feature/tajibayev-assylbek-ci-demo) Tajibayev Assylbek: fix demonstration assertion after baseline failure
+* cb68244 Tajibayev Assylbek: demonstrate failed test after successful baseline pipeline
+* 58f9c11 Tajibayev Assylbek: require BuildKit on Docker capable Jenkins agent
+* 3439ad4 Tajibayev Assylbek: fix controlled failing test and restore green CI
+* 10a74ee Tajibayev Assylbek: archive JUnit XML without optional Jenkins publisher plugin
+* 1624b2d Tajibayev Assylbek: demonstrate controlled test failure on personal branch
+| * 78fde19 (HEAD -> main, origin/main) Tajibayev Assylbek: require BuildKit on Docker capable Jenkins agent
+| * 155bd61 Tajibayev Assylbek: simplify CI and document reproducible personal setup
+| * 8135975 Tajibayev Assylbek: bump application to 1.1 for Docker rebuild demonstration
+| * 3dae6d6 Tajibayev Assylbek: archive JUnit XML without optional Jenkins publisher plugin
+|/  
+* 48a39f8 (tag: v1.0-tajibayev-assylbek) Tajibayev Assylbek: record real HTTP and persistence evidence and defense guide
+* 726187a Tajibayev Assylbek: verify six API tests Linux report and configure JDK17 CI
+* bd5b562 Tajibayev Assylbek: preserve executable shell entry points
+*   b215b87 Tajibayev Assylbek: resolve README conflict preserving both documentation goals
+|\  
+| * 8f91bbb (origin/feature/tajibayev-assylbek-documentation, feature/tajibayev-assylbek-documentation) Tajibayev Assylbek: describe container and CI documentation scope
+* | 0f06f7d Tajibayev Assylbek: clarify main submission documentation
+|/  
+*   ffdc145 Tajibayev Assylbek: merge personalized CRUD feature
+|\  
+| * 1f3d169 (origin/feature/tajibayev-assylbek-crud, feature/tajibayev-assylbek-crud) Tajibayev Assylbek: test name filtering and document CRUD improvement
+| * 78d6dd6 Tajibayev Assylbek: add case insensitive student name filter
+|/  
+* 5827976 Initial commit: Tajibayev Assylbek Student API

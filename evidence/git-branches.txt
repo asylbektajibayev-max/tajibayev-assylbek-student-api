@@ -1,0 +1,8 @@
+  feature/tajibayev-assylbek-ci-demo
+  feature/tajibayev-assylbek-crud
+  feature/tajibayev-assylbek-documentation
+* main
+  remotes/origin/feature/tajibayev-assylbek-ci-demo
+  remotes/origin/feature/tajibayev-assylbek-crud
+  remotes/origin/feature/tajibayev-assylbek-documentation
+  remotes/origin/main

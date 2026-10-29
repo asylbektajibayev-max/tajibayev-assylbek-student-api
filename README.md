@@ -91,7 +91,7 @@ git tag -n
 
 Pipeline выполняет Checkout, Build, Test, Docker Build, Verify. Ошибка sh/тестов прерывает дальнейшие stages. JUnit XML сохраняются как артефакты и при провале тестов. Имя автора печатается в консоль. Образ должен совпадать с личным именем и тегом из .env. В Jenkins нужно настроить JDK tool `midterm-jdk17`; встроенный JUnit publisher не требуется.
 
-Для демонстрации ошибки использована личная ветка `feature/tajibayev-assylbek-ci-demo`. Коммит `1624b2d` намеренно ломает controlledFailure, коммит `3439ad4` исправляет тест. Job CI_Demo №2 показывает 6 tests completed, 1 failed; последующий запуск проверяет исправление. В main намеренная ошибка не попадала. Console Output сохранён в evidence.
+Для демонстрации ошибки использована личная ветка `feature/tajibayev-assylbek-ci-demo`. Итоговая последовательность: CI_Demo №4 SUCCESS, №5 FAILURE, №6 SUCCESS. Коммит `cb68244` намеренно ломает controlledFailure, коммит `2e603a6` исправляет тест. В failed build выполняются 6 тестов, из которых один падает; следующие стадии пропускаются. В main намеренная ошибка не попадала. Console Output сохранён в evidence. Основной job №6 также завершён SUCCESS и запущен автоматически после SCM change.
 
 pollSCM опрашивает Git каждые две минуты после первого запуска pipeline. После первого успешного запуска сделать новый commit и push, дождаться автоматического запуска. Альтернатива — GitHub webhook на доступный Jenkins endpoint с секретом. Не открывать Jenkins в интернет без аутентификации и TLS.
 

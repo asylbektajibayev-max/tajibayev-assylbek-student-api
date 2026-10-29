@@ -1,5 +1,5 @@
 Student: Tajibayev Assylbek
-Date: 2026-10-29T17:05:50+00:00
+Date: 2026-10-29T17:24:08+00:00
 Username: root
 Operating system:
 PRETTY_NAME="Debian GNU/Linux 13 (trixie)"
@@ -59,17 +59,17 @@ Vulnerability Tsx async abort:           Not affected
 Vulnerability Vmscape:                   Not affected
 Memory:
                total        used        free      shared  buff/cache   available
-Mem:           3.7Gi       1.7Gi        64Mi        18Mi       2.2Gi       2.1Gi
-Swap:          1.0Gi       144Ki       1.0Gi
+Mem:           3.7Gi       1.8Gi       330Mi        24Mi       1.8Gi       1.9Gi
+Swap:          1.0Gi       500Mi       523Mi
 Disk usage and available space:
 Filesystem      Size  Used Avail Use% Mounted on
-overlay        1007G  7.5G  949G   1% /
+overlay        1007G   12G  944G   2% /
 tmpfs            64M     0   64M   0% /dev
 shm              64M     0   64M   0% /dev/shm
-C:\             476G  380G   96G  80% /source
-/dev/sde       1007G  7.5G  949G   1% /etc/hosts
+C:\             476G  386G   90G  82% /source
+/dev/sde       1007G   12G  944G   2% /etc/hosts
 tmpfs           1.9G     0  1.9G   0% /proc/acpi
 tmpfs           1.9G     0  1.9G   0% /proc/scsi
 tmpfs           1.9G     0  1.9G   0% /sys/firmware
 Project disk usage:
-56M	/tmp/midterm-38288
+57M	/tmp/tajibayev-assylbek-student-api
