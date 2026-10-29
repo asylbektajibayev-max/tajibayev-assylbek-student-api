@@ -12,7 +12,7 @@ Spring Boot CRUD API для студентов с PostgreSQL, Gradle Wrapper, Do
 
 ## Запуск
 
-1. Скопировать `.env.example` в `.env`; задать личное имя, PROJECT_NAME, IMAGE_TAG и случайный DB_PASSWORD. Не публиковать `.env`.
+1. Выполнить `python scripts/create_env.py`: создаст личный `.env` со случайным DB_PASSWORD. Уже существующий файл не перезапишет. Не публиковать `.env`.
 2. Выполнить `docker compose up -d --build`.
 3. Проверить `docker compose ps` и `curl http://localhost:18080/actuator/health`.
 4. Выполнить `python scripts/api_verify.py` для проверки всех CRUD-операций, 404, 400 и 409.
@@ -85,13 +85,13 @@ git tag -n
 
 ## Jenkins
 
-Создать Multibranch Pipeline с личным именем `Tajibayev_Assylbek_Student_API`. Добавить GitHub Branch Source с URL своего репозитория; credentialsId хранить в Jenkins Credentials. Настроить обнаружение main и feature-веток. Script Path: Jenkinsfile.
+Настроен Pipeline job `Tajibayev_Assylbek_Student_API`: Pipeline script from SCM, Git, URL личного репозитория, branch `*/main`, Script Path `Jenkinsfile`. Отдельный job `Tajibayev_Assylbek_Student_API_CI_Demo` использует `*/feature/tajibayev-assylbek-ci-demo`. Репозиторий публичный, поэтому для checkout секрет не требуется; для private repo хранить credentialsId в Jenkins Credentials.
 
 Агент Linux с label `docker` должен иметь Git, JDK 17, доступ к Docker и сеть к Gradle/Maven repositories. Gradle устанавливается через закоммиченный Wrapper. Доступ к Docker daemon даёт широкие права: использовать личный доверенный агент для этого проекта.
 
 Pipeline выполняет Checkout, Build, Test, Docker Build, Verify. Ошибка sh/тестов прерывает дальнейшие stages. JUnit XML сохраняются как артефакты и при провале тестов. Имя автора печатается в консоль. Образ должен совпадать с личным именем и тегом из .env. В Jenkins нужно настроить JDK tool `midterm-jdk17`; встроенный JUnit publisher не требуется.
 
-Для демонстрации ошибки использовать личную feature-ветку CI, указанную в Jenkinsfile. Первый запуск без параметра CONTROLLED_FAILURE должен пройти. Второй запуск с параметром должен упасть на Test. Третий запуск с выключенным параметром должен снова пройти. Сохранить Console Output и build history для всех трёх запусков. Для демонстрации исправления кодом можно добавить в feature-ветке ошибочное утверждение теста, закоммитить его, дождаться failed build, затем исправить отдельным коммитом.
+Для демонстрации ошибки использована личная ветка `feature/tajibayev-assylbek-ci-demo`. Коммит `1624b2d` намеренно ломает controlledFailure, коммит `3439ad4` исправляет тест. Job CI_Demo №2 показывает 6 tests completed, 1 failed; последующий запуск проверяет исправление. В main намеренная ошибка не попадала. Console Output сохранён в evidence.
 
 pollSCM опрашивает Git каждые две минуты после первого запуска pipeline. После первого успешного запуска сделать новый commit и push, дождаться автоматического запуска. Альтернатива — GitHub webhook на доступный Jenkins endpoint с секретом. Не открывать Jenkins в интернет без аутентификации и TLS.
 
@@ -102,4 +102,4 @@ CI автоматически собирает и проверяет измен�
 - https://docs.spring.io/spring-boot/3.5/system-requirements.html
 - https://docs.docker.com/compose/how-tos/startup-order/
 - https://www.jenkins.io/doc/book/pipeline/syntax/
-- https://docs.gradle.org/8.14.3/userguide/gradle_wrapper.html
+- https://docs.gradle.org/8.14.4/userguide/gradle_wrapper.html

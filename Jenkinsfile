@@ -3,9 +3,6 @@ pipeline {
     tools { jdk 'midterm-jdk17' }
     options { skipDefaultCheckout(true); timestamps(); disableConcurrentBuilds() }
     triggers { pollSCM('H/2 * * * *') }
-    parameters {
-        booleanParam(name: 'CONTROLLED_FAILURE', defaultValue: false, description: 'Enable only on the personal CI demonstration branch')
-    }
     environment {
         STUDENT_NAME = 'Tajibayev Assylbek'
         IMAGE = 'tajibayev-assylbek-student-api:v1.1-tajibayev-assylbek-38288'
@@ -19,12 +16,7 @@ pipeline {
         }
         stage('Test') {
             steps {
-                script {
-                    if (params.CONTROLLED_FAILURE && env.BRANCH_NAME != 'feature/tajibayev-assylbek-ci-demo') {
-                        error('Controlled failure is restricted to the personal test branch')
-                    }
-                    sh "./gradlew --no-daemon test ${params.CONTROLLED_FAILURE ? '-PcontrolledFailure=true' : ''}"
-                }
+                sh './gradlew --no-daemon test'
             }
             post { always { archiveArtifacts allowEmptyArchive: true, artifacts: 'build/test-results/test/*.xml' } }
         }
