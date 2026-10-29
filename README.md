@@ -6,6 +6,8 @@
 
 Documentation status: initial
 
+Личная CRUD-доработка Tajibayev Assylbek: GET /api/students?name=TAJIBAYEV фильтрует студентов по фрагменту имени без учёта регистра. Покрыто тестом nameFilter.
+
 Spring Boot CRUD API для студентов с PostgreSQL, Gradle Wrapper, Docker Compose и Jenkins CI. Java 17; Spring Boot 3.5.16; Gradle 8.14.3; PostgreSQL 17. Приложение показывает имя автора через `GET /`.
 
 ## Запуск
