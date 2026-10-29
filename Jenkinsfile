@@ -7,6 +7,7 @@ pipeline {
         booleanParam(name: 'CONTROLLED_FAILURE', defaultValue: false, description: 'Enable only on the personal CI demonstration branch')
     }
     environment {
+        DOCKER_BUILDKIT = '1'
         STUDENT_NAME = 'Tajibayev Assylbek'
         IMAGE = 'tajibayev-assylbek-student-api:v1.0-tajibayev-assylbek-38288'
     }
