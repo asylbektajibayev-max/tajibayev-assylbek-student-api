@@ -37,5 +37,5 @@ class StudentApiTest {
   mvc.perform(get("/api/students").param("name","TAJIBAYEV")).andExpect(status().isOk()).andExpect(jsonPath("$.length()").value(1));
   mvc.perform(get("/api/students").param("name","absent")).andExpect(status().isOk()).andExpect(jsonPath("$.length()").value(0));
  }
- @Test void controlledFailure() { Assertions.fail("Controlled test failure on Tajibayev Assylbek personal branch"); }
+ @Test void controlledFailure() { Assertions.assertFalse(Boolean.getBoolean("midterm.fail"), "Controlled failure demonstration"); }
 }
