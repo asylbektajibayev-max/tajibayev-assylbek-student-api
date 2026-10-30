@@ -1,0 +1,32 @@
+pipeline {
+    agent { label 'docker' }
+
+    tools {
+        jdk 'midterm-jdk17'
+    }
+
+    triggers {
+        githubPush()
+    }
+
+    stages {
+        stage('Checkout') {
+            steps {
+                checkout scm
+            }
+        }
+
+        stage('Build') {
+            steps {
+                sh 'chmod +x gradlew'
+                sh './gradlew --no-daemon assemble'
+            }
+        }
+
+        stage('Test') {
+            steps {
+                sh './gradlew --no-daemon test'
+            }
+        }
+    }
+}
